@@ -4,11 +4,11 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 
-//prueba1
+//prueba12
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <BrowserRouter>
-<App />)
+<App />
 </BrowserRouter>
 );
