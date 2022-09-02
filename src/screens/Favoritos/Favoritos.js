@@ -2,9 +2,9 @@ import React from 'react'
 
 function Favoritos() {
   return (
-    <footer>
+    <Favoritos>
         <p></p>
-    </footer>
+    </Favoritos>
   )
 }
 
