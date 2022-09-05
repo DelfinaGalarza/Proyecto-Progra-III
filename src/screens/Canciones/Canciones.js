@@ -14,34 +14,38 @@ class Canciones extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://api.deezer.com/chart')
+        console.log('ho')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0')
             .then( res => res.json())
-            .then( data => this.setState({
-                canciones: data.results,
-                backup: data.results,
-                nextUrl: data.info.next
-            }))
-            .catch()
+            .then( data =>{
+                console.log(data);
+                this.setState({
+                canciones: data.tracks.data,
+                backup: data.tracks.data,
+            })})
+            .catch(e => console.log(
+             e   
+            ))
     }
 
-    filtrarTarjetas(nombre){
-        let cancionesFiltradas= this.state.backup.filter(cancion => cancion.name.toLowerCase().includes(nombre.toLowerCase()));
+    filtrarTarjetas(nombreBuscado){
+        let cancionesFiltradas= this.state.backup.filter(cancion => cancion.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
         this.setState({
         canciones: cancionesFiltradas
         })
 
     }
     
-    traerMas(){
-        //Traer la siguiente página de personajes
-        fetch(this.state.nextUrl)
-            .then( res => res.json())
-            .then( data => this.setState({
-                canciones: data.results.concat(this.state.canciones),
-                nextUrl: data.info.next
-            }))
-            .catch()
-    }
+    // traerMas(){
+    //     //Traer la siguiente página de personajes
+    //     fetch(this.state.nextUrl)
+    //         .then( res => res.json())
+    //         .then( data => this.setState({
+    //             canciones: data.results.concat(this.state.canciones),
+    //             nextUrl: data.info.next
+    //         }))
+    //         .catch()
+    // }
 
     borrar(id){
     let cancionesFiltradas = this.state.personajes.filter(unaCancion => unaCancion.id !== id);
@@ -52,15 +56,14 @@ class Canciones extends Component{
 
 
     render(){
-        console.log(this.state.personajes);
         return(
             <>
-        <Filtro filtro ={(nombre)=> this.filtrarTarjetas(nombre)} />
+            {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
             <React.Fragment>
-                <button onClick={()=>this.traerMas()}> Traer más </button>
+                {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
                 <section>
                     { 
-                        this.state.canciones.map( (unaCancion, idx) => <DetalleCancion key={unaCancion.name+idx} datosCancion ={unaCancion} borrar={(id)=>this.borrar(id)}/>)
+                        this.state.canciones.map( (unaCancion, idx) => <DetalleCancion key={unaCancion.title+idx} datosCancion ={unaCancion} borrar={(id)=>this.borrar(id)}/>)
                     }
                 </section>
             </React.Fragment>
