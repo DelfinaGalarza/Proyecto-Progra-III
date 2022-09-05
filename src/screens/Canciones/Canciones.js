@@ -8,24 +8,24 @@ class Canciones extends Component{
         this.state={
             canciones:[], //aparecer personajes
             nextUrl:'',
-            backup:''
+            backup:'',
+            ready:false
         }
     }
 
     componentDidMount(){
         //Buscamos datos
-        console.log('ho')
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
             .then( res => res.json())
             .then( data =>{
                 console.log(data);
                 this.setState({
-                canciones: data.tracks.data,
-                backup: data.tracks.data,
+                canciones: data.data,
+                backup: data.data,
+                ready:true
             })})
-            .catch(e => console.log(
-             e   
-            ))
+            .catch(e => console.log(e   
+))
     }
 
     filtrarTarjetas(nombreBuscado){
@@ -48,7 +48,7 @@ class Canciones extends Component{
     // }
 
     borrar(id){
-    let cancionesFiltradas = this.state.personajes.filter(unaCancion => unaCancion.id !== id);
+    let cancionesFiltradas = this.state.canciones.filter(unaCancion => unaCancion.id !== id);
     this.setState({
         canciones: cancionesFiltradas
     })
@@ -63,7 +63,9 @@ class Canciones extends Component{
                 {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
                 <section>
                     { 
+                    this.state.ready ?
                         this.state.canciones.map( (unaCancion, idx) => <DetalleCancion key={unaCancion.title+idx} datosCancion ={unaCancion} borrar={(id)=>this.borrar(id)}/>)
+                    : 'Cargando'
                     }
                 </section>
             </React.Fragment>

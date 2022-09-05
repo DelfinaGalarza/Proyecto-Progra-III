@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Canciones from '../../screens/Canciones/Canciones'
-import Search from '../../screens/Search/Search'
+import Canciones from '../Canciones/Canciones'
+import Search from '../Search/Search'
 
 class Home extends Component {
     constructor(props){
@@ -14,6 +14,7 @@ render(){
         <div>
             <Search />
             <h2>Canciones:</h2>
+            <h2>hola:</h2>
             <Canciones />
         </div>
         )
