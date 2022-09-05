@@ -6,6 +6,6 @@ function NotFound() {
         <p></p>
     </NotFound>
   )
-}
+};
 
 export default NotFound
