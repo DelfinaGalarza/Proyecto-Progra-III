@@ -14,7 +14,6 @@ render(){
         <div>
             <Search />
             <h2>Canciones:</h2>
-            <h2>hola:</h2>
             <Canciones />
         </div>
         )

@@ -9,7 +9,7 @@ class Canciones extends Component{
             canciones:[], //aparecer personajes
             nextUrl:'',
             backup:'',
-            ready:false
+            ready:false,
         }
     }
 
