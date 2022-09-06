@@ -1,790 +1,119 @@
+/* Resets */
 *{
     box-sizing: border-box;
-    margin: 0%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-decoration: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-
 }
-
-/*diseño computadora*/
-ul,ol{
+ul,ol {
     padding: 0;
-    list-style: none;
 }
-li{
-    list-style-type: none;
+li {
+    list-style-type:none;
 }
-
-/*Header*/
-.logo{
-    border-radius: 48%;
-    width: auto;
-    height: 170px;
-    margin-top: 20px;
-    margin-left: 20PX;
-}
-.button{
-    background-color: black;
-    color: chartreuse;
-    border-radius: 10px;
-    border:solid 3px chartreuse;
-}
-.buscar{
-    margin: 20px;
-    margin-top: 20px;
-    color: chartreuse;
-}
-input{
-    border-radius: 10px;
-    border-bottom: solid 3px chartreuse;
-    color: chartreuse;
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
-.sound-now{
+a {
     text-decoration: none;
-    font-size:40px;
-    margin-right: 60px;
-    color:  rgb(0, 255, 21);
+    color: #000;
 }
-.menu{
-    color: rgb(105, 112, 98);
+body {
+    font-family: Nunito;
+    margin: 0;
+    background-color: #eee;
+}
+
+/* Navigation */
+nav{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin-right: 40px;
-   
+    padding: 0 20px;
+    background-color: #4e73df;
+    color: #fff
 }
-.barratexto{
-    color: rgb(0, 255, 21);
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main-nav li,
+.user li {
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-nav li:first-child {
     font-weight: bold;
-    text-decoration: none;
-    margin: 15px;
-}
-.container{
-    background-color: black;
-}
-.titulos{
-    color: rgb(0, 255, 21);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    margin: 30px; 
-    padding: 20px;
-}
-.user{
-    color: rgb(0, 255, 234);
-    text-decoration: underline;
-    font-weight: bold;
-    margin-left: 20px;
-}
-.iniciars{
-    margin: 10px;
 }
 
-header{
-    background-color: black;
-    
-}
-.introhome{
-    width: 100%;
-}
-.cajainicio{
-    background-color: black;
-    margin-bottom: 20px;
-}
-body{
-    background-color: black;
-}
-/*Body*/
-.listas{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-a{
-    color: rgb(105, 112, 98);
-}
-.caja{
-    width: 20%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-    text-align: center;
-}
-.names{
-    color: rgb(105, 112, 98);
-    font-weight: bold;
-    margin: 20px;
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.namesagregar{
-    color: rgb(0, 255, 21);
-    font-weight: bold;
-    margin: 20px;
-    font-size: 0.8em;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.caja img{
-    width: 100%;
-}
-.fotos{
-    border-radius: 20%;
-    width: 100%;
-}
-
-.login{
-    border-radius: 99%;
-    width: auto;
-    height: 50px;
-}
-.albumpic{
-    width: 100%;
-    margin-bottom: 3%;
-}
-.playlist{
-    background-color: black;
-    border: blanchedalmond;
-    
-}
-
-/*footer*/
-.footer{
-    color: rgb(105, 112, 98);
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.footerpic{
-    width: 100%;
-}
-.seguinos{
-    width: 50%;
-    margin-top: 30px;  
-}
-.instagram{
-    width: 70px;
-    align-items: center;
-    
-}
-.extra{
-   
-    padding: 20px;
-}
-.nombre{
-    margin-top: 30px;
-    margin-right:20px;
-}
-
-.containergenerosg{
-    background-color: rgb(31, 138, 84);
-    width: 100%;
-    margin-bottom: 20px;
-}
-.generosg{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-
-/* pagina miperfil (perfil.html)*/
-.formulario{
-    color: black;
-    background-color:rgb(0, 255, 21);
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgb(0, 255, 21);    
-    width: 800px;
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.nombreu{
-    border-color: black;
-    color:black;
-    width: 60%;
-    height: 30px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
-.mail{
-    border-color: black;
-    color:black;
-    width: 60%;
-    height: 30px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
-.contrasena{
-   border-color: black;
-    color:black;
-    width: 60%;
-    height: 30px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
-.iniciars{
-    background-color: black;
-    color:chartreuse;
-    border-radius: 10px;
-    border: solid 3px chartreuse;
-}
-.volverainicio{
-    color: black;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/*slider login*/
-.slider{
-    width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-    height: 400px;
-    overflow: hidden;
-}
-.slider ul{
-    margin-top: 20px;
-    width: 400%;
-    display: flex;
-    height: 100%;
-    animation: cambio 20s infinite alternate;
-}
-.slider li{
-    width: 100%;
-    list-style: none;
-    height: 100%;
-}
-.slider li img{
-    width: 100%;
-}
-
-/*generales*/
-.justin{
-    color: cornsilk;
-}
-.texto{
-    margin: 15px;
-    text-decoration: none;
-}
-
-.artista{
-    color: rgb(105, 112, 98);
-    width: 17%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 15px;
-}
-.fotobob{
-    border: 2px solid rgb(105, 112, 98);
-    margin: 10px;
-}
-.bobtopfive{
-    color: rgb(105, 112, 98);
-    margin: 10px;
-}
-.otraclase{
-    width: 170px;
-    align-items: center;
-}
-.pag{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    color: rgb(0, 255, 21);
-}
-.detallealbum{
-    width: 800px;
-    height: auto;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.detalleartista{
-    width: 850px;
-    height: 800pxpx;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.busqueda{
-    width: 800px;
-    height: 800px;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.album{
-    color: rgb(105, 112, 98);
-    width: 17%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 15px;
-}
-.fotoa{
+.user img {
+    width: 30px;
     border-radius: 90%;
-    width: AUTO;
-    height: 300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.fotoaa{
-    border-radius: 20%;
-    width: AUTO;
-    margin-bottom: 0px;
-    margin-left: 30px;
-    margin-top: 20px;
-    
-}
-.detallestrack{
-    width: 800px;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    height: auto;
-}
-.detallegenero{
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.fotoj{
-    width: 40%;
-    height: auto;
-    border-radius: 20%;
-    margin-top: 20px;
-    
-}
-.videoj{
-    margin-top: 20px;
-}
-.fotoalbum{
-    border-radius: 90%;
-    width: auto;
-    height: 250px;
+    margin-left: 10px;
 }
 
-.detail{
-    margin-right: 30px;
-    margin-left: 30px;
-}
-.namesx{
-    color: rgb(105, 112, 98);
-    font-weight: bold;
-    margin: 20px;
-    font-size: 1.2em;
-    text-align: center;
-}
-.fotosd{
-    width: 180px;
-    height: 180px;
-    border-radius: 20%;
-    margin-top: 20px;
-}
-.pag{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.fav{
-    width: 40px; 
-    height: 20px;
-    align-items: center;
-}
-.fav2{
-    width: auto;
-    height: 35px;
-}
-.favx{
-    width: 100%; 
-    margin-top: 5px;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+h1,h2 {
+    font-weight: 400;
 }
 
-/*playlist (playlist.html)*/
-.playlist{
-    width: 650px;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    text-align: center;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+h1,
+main {
+    padding: 0 30px;
 }
 
-.fotop{
-    width: 180px;
-    height: 180px;
-    border-radius: 10%;
-    margin-top: 20px;
-}
-.containerpl{
-    background-color: black;
-}
-.cajapl{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    border-color: chartreuse;
-    margin-bottom: 10px;
-}
-.fotopl{
-    width: 50%;
-    margin-bottom: 20px;
-    align-items: center;
-}
-.infopl{
-    width: 50%;
-    padding-right: 30px;
-    padding-top: 20px;
-    align-items: left;
-}
-.fotopla{
-    width: auto;
-    height: 50px;
-    margin-top: 20px;
-}
-.reproductor{
-    margin-top: 10px;
-    height: 25px;
-}
-.bodymyplaylist{
-    background-image: url(../img/collagedos.jpeg); 
-    
-
-}
-
-@keyframes cambio {
-    0% {margin-left:0; }
-    20% {margin-left:0; }
-
-    25% {margin-left:-100%; }
-    45% {margin-left:-100%; }
-
-    50% {margin-left:-200%; }
-    75% {margin-left:-200%; }
-
-    80% {margin-left:-300%; }
-    100% {margin-left:-300%; }
-}
-
-/* diseño tablet */
-@media(max-width: 768px){
-    
-    main{
-        width: 100%;
-        text-align: center;
-        margin-top: 0%;
-    }
-    .caja{
-        width:45%;
-        margin:2.5%;
-    }
-    .listas{
-        justify-content: space-around;
-    }
-    .menu{
-        justify-content: space-around;
-    }
-    .logo{
-        width: auto;
-        height: 170px;
-        margin-top: 20px;
-        margin-left: 20PX;
-    }
-    .user{
-        margin-left: 0%;
-    }
-    .perfil-menu{
-        justify-content: right;
-        margin-right: 0%;
-    }
-    .introhome{
-        width: 100%;
-    }
-    .footerpic{
-        width: 100%;
-    }
-    .albumpic{
-        width: 100%;
-    }
-    .album{
-        width:45%;
-        margin:2.5%;
-    }
-    .formulario{
-        width: 65vh;
-    }
-    .detallesg{
-        width: 75vh;
-    }
-    .detallesg{
-        width: 75vh;
-    }
-    .detallegenero{
-        width: 70vh;
-    }
-    .detallealbum{
-        width: 70vh;
-    }
-    .detallestrack{
-        width: 70vh;
-    }
-    .fotos{
-        width: 100%;
-        margin-top: 10px;
-    }
-    .sound-now{
-        display: none;
-    }
-    
-  
-}
-/*javascript*/
-.aviso{
-    color:chartreuse ;
-    margin-top: 20px;
-    border: solid 3px chartreuse;
-}
-.cancion{
-    color: white;
-}
-.dalbum{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 10px;
-    justify-content: space-around;
-
-}
-.jsdalbum{
-    justify-content: flex-start;
-}
-.jsdalbum2{
-    margin-top: 40px;
-    margin-right: 50px;
-    justify-content: flex-end;
-}
-.detallesfotos{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-
-}
-.fotogen{
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 20%;
-
-}
-.listageneros{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-}
-.listagen1{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;;
-    width: 100%;
-    align-items: center;
-}
-
-.listagen{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
-.artistasg{
-    width: 100%;
-
-}
-.caja2{
-    width: 20%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-    text-align: center;
-}
-.section5{
-    width: 100%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-    text-align: center;
-}
-
-.caja5{
-    width: 100%;
-    background-color:black;
+/* Top data */
+.top-data {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 20px;
-    text-align: center;
-}
-.names5{
-    align-items: center;
-}
-
-.fotos5{
-    align-items: center;
-    justify-content: flex-start ;
-    border-radius: 30%;
-
-}
-.cosa5{
-    align-items: center;
-
-}
-.resdebus7{
-    width: 100%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.resultadosArtist{
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    padding: 20px;
-}
-
-.resultadosAlbums{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    padding: 20px;
-}
-.resultadosTracks{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    padding: 20px;
-}
-.tito{
-    color:black ;
-    margin-top: 20px;
-
-}
-.resultadobusq{
-    margin: 1180px;;
-}
-.tracks{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
     justify-content: space-between;
+    color: #666;
 }
-.artists{
+.data-detail {
+    width: 32%;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 10px 30px;
+    text-transform: capitalize;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
     justify-content: space-between;
-}
-.albums{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
-.resultado7{
-    color: rgb(0, 255, 21);
-}
-.oops{
-    background-color: chartreuse;
-}
-.cajaextra{
-    width: 20%;
-    background-color:black;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 1%;
-    text-align: center;
 }
-.detailx{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100%;
-        padding: 20px;
-    }
+.data-detail p {
+    margin-top:0;
+}
+.data-detail h4 {
+    margin-bottom: 0;
+}
+
+/* Categorías */
+.general-data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px 20px 10px 20px;
+}
+.general-data .card {
+    width: 32%;
+    border-radius: 4px;
+    background-color: #36b9cc;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    color: #fff;
+}
 
 
-.spinner{
-    border-radius: 100%;
-    width: auto;
-    height: 130px;
+/*Characters*/
+.card-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap:wrap ;
+    justify-content: center;
 }

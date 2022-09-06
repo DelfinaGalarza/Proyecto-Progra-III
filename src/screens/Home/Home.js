@@ -13,7 +13,7 @@ render(){
     return (
         <div>
             <Search />
-            <h2>Canciones:</h2>
+            <h2>ALBUMES:</h2>
             <Canciones />
         </div>
         )

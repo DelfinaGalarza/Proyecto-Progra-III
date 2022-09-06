@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './detalleCancion.css'
 
 class DetalleCancion extends Component{
     constructor(props){
@@ -42,16 +43,20 @@ class DetalleCancion extends Component{
     render(){
         // console.log(this.props);
         return(
-            <article >
-                <img src={this.props.datosCancion.album.cover} alt="" />
-                <h2>{this.props.datosCancion.title}</h2> {/* Nombre */}
-                <p>{this.props.datosCancion.artist.name}</p> {/* Estado */}
-                <p>{this.props.datosCancion.album.title}</p> {/* Especie */}
+            <article className='album'>
+                <div >
+                    <div >
+                    <img src={this.props.datosAlbum.cover} alt="" />
+                    </div>
+
+                <h2 >{this.props.datosAlbum.title}</h2> {/* Nombre */}
+                <p >{this.props.datosAlbum.artist.name}</p> {/* Estado */}
+                {/* <p>{this.props.datosCancion.album.title}</p> Especie */}
                 {/* <p className='more'>Ver más</p>  */}
                 {/* <section className='extra'>
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 
                 </section> */}
-                <p className='delete' onClick={()=>this.props.borrar(this.props.datosCancion.id)}>Borrar</p>
+                <p  onClick={()=>this.props.borrar(this.props.datosCancion.id)}>Borrar</p>
                 {
                     this.state.favorito ?
                     <button onClick={()=>this.removeFavorites(this.props.datosCancion.id)}> Sacar de Favoritos </button>
@@ -59,6 +64,8 @@ class DetalleCancion extends Component{
                     <button onClick={()=>this.addFavorites(this.props.datosCancion.id)}> Agregar a Favoritos </button>
             
                 }
+                </div>
+                
             </article>
 
         )
