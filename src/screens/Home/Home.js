@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Canciones from '../Canciones/Canciones'
+import Canciones from '../../components/Canciones/Canciones'
 import Search from '../../components/Search/Search'
 
 class Home extends Component {
