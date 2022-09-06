@@ -56,12 +56,12 @@ class DetalleCancion extends Component{
                 {/* <section className='extra'>
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 
                 </section> */}
-                <p  onClick={()=>this.props.borrar(this.props.datosCancion.id)}>Borrar</p>
+
                 {
                     this.state.favorito ?
-                    <button onClick={()=>this.removeFavorites(this.props.datosCancion.id)}> Sacar de Favoritos </button>
+                    <button onClick={()=>this.removeFavorites(this.props.datosAlbum.id)}> Sacar de Favoritos </button>
                     :
-                    <button onClick={()=>this.addFavorites(this.props.datosCancion.id)}> Agregar a Favoritos </button>
+                    <button onClick={()=>this.addFavorites(this.props.datosAlbum.id)}> Agregar a Favoritos </button>
             
                 }
                 </div>
