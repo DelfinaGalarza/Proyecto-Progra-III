@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Canciones from '../Canciones/Canciones'
-import Search from '../Search/Search'
+import Search from '../../components/Search/Search'
 
 class Home extends Component {
     constructor(props){
