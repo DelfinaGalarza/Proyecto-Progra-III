@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './detalleCancion.css'
+//import './styles.css'
 
 class DetalleCancion extends Component{
     constructor(props){

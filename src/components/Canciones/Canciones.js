@@ -15,6 +15,7 @@ class Canciones extends Component{
     componentDidMount(){
         //Buscamos datos
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
+
             .then( res => res.json())
             .then( data =>{
                 console.log(data);

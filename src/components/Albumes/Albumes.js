@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
+import DetalleCancion from '../DetalleCancion/DetalleCancion';
 //import Filtro from "../Filtro/Filtro";
 
 class Albumes extends Component{
@@ -60,11 +60,12 @@ class Albumes extends Component{
             {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
             
                 {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
+        
                 <section className="card-container">
                     
                     { 
                     this.state.ready ?
-                        this.state.albumes.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.canciones.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
                 </section>
