@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import DetalleCancion from '../DetalleCancion/DetalleCancion';
+import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
 import Filtro from "../Filtro/Filtro";
 
-class Canciones extends Component{
-    constructor(){
+class Albumes extends Component{
         super()
         this.state={
             albumes:[], //aparecer personaje
@@ -14,7 +13,7 @@ class Canciones extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums')
             .then( res => res.json())
             .then( data =>{
                 console.log(data);
@@ -64,7 +63,7 @@ class Canciones extends Component{
                     
                     { 
                     this.state.ready ?
-                        this.state.canciones.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.albumes.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
                 </section>
@@ -76,4 +75,4 @@ class Canciones extends Component{
 }
 
 
-export default Canciones
+export default Albumes

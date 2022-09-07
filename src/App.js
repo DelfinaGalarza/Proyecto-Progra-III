@@ -3,6 +3,9 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import DetalleAlbum from './components/DetalleAlbum/DetalleAlbum';
 import DetalleCancion from './components/DetalleCancion/DetalleCancion';
+import Home from './screens/Home/Home';
+
+
 
 function App() {
 
@@ -14,14 +17,7 @@ return (
 <>
 <NavBar paginas={paginas} nombre={nombre}/>
 
-<main>
 
-<h2> ALBUMES</h2>
-<DetalleAlbum/>
-<h2> CANCIONES</h2>
-<DetalleCancion/>
-
-</main>
 <Footer/>
 
 </>

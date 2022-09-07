@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
-import Canciones from '../../components/Canciones/Canciones'
-import Search from '../../components/Search/Search'
 
 class Home extends Component {
     constructor(props){
         super(props)
-        this.state={
-        }
-    }
+        this.state= {
+            canciones: [],
+            albumes: [],
+            search: [],        }
+    }}
 
-render(){
-    return (
-        <div>
-            <Search />
-            <h2>ALBUMES:</h2>
-            <Canciones />
-        </div>
-        )
-    }
-}
+
+<main>
+
+<h2> ALBUMES</h2>
+<DetalleAlbum/>
+<h2> CANCIONES</h2>
+<DetalleCancion/>
+
+</main>
 
 
 export default Home
