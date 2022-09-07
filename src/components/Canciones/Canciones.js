@@ -6,8 +6,7 @@ class Canciones extends Component{
     constructor(){
         super()
         this.state={
-            canciones:[], //aparecer personajes
-            nextUrl:'',
+            albumes:[], //aparecer personaje
             backup:'',
             ready:false,
         }
@@ -15,12 +14,12 @@ class Canciones extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums')
             .then( res => res.json())
             .then( data =>{
                 console.log(data);
                 this.setState({
-                canciones: data.data,
+                albumes: data.data,
                 backup: data.data,
                 ready:true
             })})
@@ -28,13 +27,13 @@ class Canciones extends Component{
             )
     }
 
-    filtrarTarjetas(nombreBuscado){
-        let cancionesFiltradas= this.state.backup.filter(cancion => cancion.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
-        this.setState({
-        canciones: cancionesFiltradas
-        })
+    // filtrarTarjetas(nombreBuscado){
+    //     let cancionesFiltradas= this.state.backup.filter(cancion => cancion.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
+    //     this.setState({
+    //     canciones: cancionesFiltradas
+    //     })
 
-    }
+    //}
     
     // traerMas(){
     //     //Traer la siguiente página de personajes
@@ -47,28 +46,29 @@ class Canciones extends Component{
     //         .catch()
     // }
 
-    borrar(id){
-    let cancionesFiltradas = this.state.canciones.filter(unaCancion => unaCancion.id !== id);
-    this.setState({
-        canciones: cancionesFiltradas
-    })
-    }
+    // borrar(id){
+    // let cancionesFiltradas = this.state.canciones.filter(unaCancion => unaCancion.id !== id);
+    // this.setState({
+    //     canciones: cancionesFiltradas
+    // })
+    // }
 
 
     render(){
         return(
             <>
             {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
-            <React.Fragment>
+            
                 {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
-                <section>
+                <section className="card-container">
+                    
                     { 
                     this.state.ready ?
-                        this.state.canciones.map( (unaCancion, idx) => <DetalleCancion key={unaCancion.title+idx} datosCancion ={unaCancion} borrar={(id)=>this.borrar(id)}/>)
+                        this.state.albumes.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
                 </section>
-            </React.Fragment>
+            
             </>
         )
     }
