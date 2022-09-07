@@ -24,8 +24,8 @@ class Canciones extends Component{
                 backup: data.data,
                 ready:true
             })})
-            .catch(e => console.log(e   
-))
+            .catch(e => console.log(e)
+            )
     }
 
     filtrarTarjetas(nombreBuscado){
