@@ -7,6 +7,7 @@ import Home from './screens/Home/Home';
 import Canciones from './components/Canciones/Canciones';
 import DetalleCancion from './components/DetalleCancion/DetalleCancion';
 import NotFound from './components/NotFound/NotFound'
+import Albumes from './components/Albumes/Albumes'
 
 
 

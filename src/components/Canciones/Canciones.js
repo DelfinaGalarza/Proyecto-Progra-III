@@ -20,7 +20,7 @@ class Canciones extends Component{
             .then( data =>{
                 console.log(data);
                 this.setState({
-                albumes: data.data,
+                canciones: data.data,
                 backup: data.data,
                 ready:true
             })})
@@ -65,7 +65,7 @@ class Canciones extends Component{
                     
                     { 
                     this.state.ready ?
-                        this.state.canciones.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.canciones.map( (unCancion, idx) => <DetalleCancion key={unCancion +idx} datosCancion ={unCancion} />)
                     : 'Cargando'
                     }
                 </section>

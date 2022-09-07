@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import DetalleCancion from '../DetalleCancion/DetalleCancion';
+import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
 //import Filtro from "../Filtro/Filtro";
 
 class Albumes extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             albumes:[], //aparecer personaje
-            backup:'',
+            backup:[],
             ready:false,
         }
     }
@@ -65,7 +65,7 @@ class Albumes extends Component{
                     
                     { 
                     this.state.ready ?
-                        this.state.canciones.map( (unAlbum, idx) => <DetalleCancion key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.albumes.map( (unAlbum, idx) => <DetalleAlbum key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
                 </section>
