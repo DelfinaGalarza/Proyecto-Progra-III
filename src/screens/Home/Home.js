@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component } from 'react'
+import Albumes from './components/Albumes/Albumes';
+import Canciones from './components/Canciones/Canciones';
+
 
 class Home extends Component {
     constructor(props){
@@ -13,11 +16,11 @@ class Home extends Component {
 <main>
 
 <h2> ALBUMES</h2>
-<DetalleAlbum/>
+<Albumes/>
 <h2> CANCIONES</h2>
-<DetalleCancion/>
+<Canciones/>
 
 </main>
 
 
-export default Home
+export default Home;

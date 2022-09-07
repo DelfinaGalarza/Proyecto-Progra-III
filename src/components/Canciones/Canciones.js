@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DetalleCancion from '../DetalleCancion/DetalleCancion';
-import Filtro from "../Filtro/Filtro";
+//import Filtro from "../Filtro/Filtro";
 
 class Canciones extends Component{
     constructor(){

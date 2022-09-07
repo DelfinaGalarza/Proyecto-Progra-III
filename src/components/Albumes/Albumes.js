@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
-import Filtro from "../Filtro/Filtro";
+//import Filtro from "../Filtro/Filtro";
 
 class Albumes extends Component{
+    constructor(){
         super()
         this.state={
             albumes:[], //aparecer personaje
