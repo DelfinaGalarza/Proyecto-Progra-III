@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
+import CardAlbum from '../CardAlbum/CardAlbum';
 import './styles.css'
 
 //import Filtro from "../Filtro/Filtro";
@@ -67,7 +67,7 @@ class Albumes extends Component{
                     
                     { 
                     this.state.albumes.length > 0?
-                        this.state.albumes.map( (unAlbum, idx) => <DetalleAlbum key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.albumes.map( (unAlbum, idx) => <CardAlbum key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
                 </section>

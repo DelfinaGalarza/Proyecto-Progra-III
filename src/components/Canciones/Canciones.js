@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css'
-import DetalleCancion from '../DetalleCancion/DetalleCancion';
+import CardCancion from '../CardCancion/CardCancion';
 // import Filtro from "../Filtro/Filtro";
 
 class Canciones extends Component{
@@ -54,17 +54,17 @@ class Canciones extends Component{
     // }
 
 
-     render(){
+    render(){
         return(
             <>
              {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} />  */}
             
                 {/* { <button onClick={()=>this.traerMas()}> Traer más </button> } */}
-                 <section className="card-container">
+                <section className="card-container">
                     
                     { 
                     this.state.canciones.length >0 ?
-                        this.state.canciones.map( (unCancion, idx) => <DetalleCancion key={unCancion +idx} datosCancion ={unCancion} />)
+                        this.state.canciones.map( (unCancion, idx) => <CardCancion key={unCancion +idx} datosCancion ={unCancion} />)
                     : 'Cargando'
                     }
                 </section>

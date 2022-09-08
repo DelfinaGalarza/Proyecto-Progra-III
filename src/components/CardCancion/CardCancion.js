@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './styles.css'
+import {Link} from 'react-router-dom';
 
-class DetalleCancion extends Component{
+class CardCancion extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -46,7 +47,8 @@ class DetalleCancion extends Component{
             <article className='Cancion'>
                 <div >
                     <div >
-                    <img src={this.props.datosCancion.album.cover} alt="" />
+                    <Link to={`/DetalleC?id=${this.props.datosCancion.id}`}  > <img src={this.props.datosCancion.album.cover} alt="" /> </Link>
+                    
                     </div>
 
                 <h2 >{this.props.datosCancion.title}</h2> {/* Nombre */}
@@ -73,4 +75,4 @@ class DetalleCancion extends Component{
 
 }
 
-export default DetalleCancion
+export default CardCancion

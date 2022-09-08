@@ -5,6 +5,8 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Home from './screens/Home/Home';
 import Favoritos from './screens/Favoritos/Favoritos';
+import DetalleA from './screens/DetalleA/DetalleA';
+import DetalleC from './screens/DetalleC/DetalleC'
 
 
 
@@ -14,10 +16,12 @@ return (
   <div>
     <NavBar/>
     <Switch>
-          <Route path ='/' component={Home}/>
-          <Route path='/' component={Favoritos} />
-        <Footer/>
+          <Route path ='/' exact component={Home}/>
+          <Route path='/favoritos' component={Favoritos} />
+          <Route path='/DetalleC/:id' component={DetalleC} />
+          <Route path='/DetalleA/:id' component={DetalleA} />
       </Switch>
+      <Footer/>
   </div>
   );
   }

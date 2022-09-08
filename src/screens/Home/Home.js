@@ -9,8 +9,8 @@ class Home extends Component {
     return (
       
       <>
-        <Albumes />
-        <Canciones />
+        <Albumes/>
+        {/* <Canciones /> */}
         {/* <DetalleCancion /> */}
       </>
   

@@ -17,14 +17,14 @@ function NavBar(props) {
     </div>
             <article className="header-items">
                 <article className="BarraDeBusqueda">
-                   <div className='menu'>
+                  <div className='menu'>
                         <div > <Link to="/" exact="true"> HOME </Link></div>
                         <div >  <Link to="/favoritos" exact="true"> FAVORITOS</Link></div>
                         <div > <Link to="/vertodas"> VER TODAS</Link> </div>
                         </div>
                             {/* <form action="search-results.html" method="GET" class="buscar">
-                               <input type="text" name="search" placeholder="¿Qué estás buscando?" value="">
-                               <button type="submit" class="button">Buscar</button>
+                              <input type="text" name="search" placeholder="¿Qué estás buscando?" value="">
+                              <button type="submit" class="button">Buscar</button>
                                <p class= "aviso"></p>
                             </form> */}
                         </article>
