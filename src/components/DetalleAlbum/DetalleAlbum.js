@@ -48,7 +48,7 @@ class DetalleAlbum extends Component{
                 <img src={this.props.datosAlbum.cover} alt="" />
                 <h2>{this.props.datosAlbum.title}</h2> {/* Nombre */}
                 <p>{this.props.datosAlbum.artist.name}</p> {/* Estado */}
-                <p>{this.props.datosAlbum.album.title}</p> {/* Especie */}
+                {/* <p>{this.props.datosAlbum.album.title}</p> Especie */}
                 {/* <p className='more'>Ver más</p>  */}
                 {/* <section className='extra'>
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 

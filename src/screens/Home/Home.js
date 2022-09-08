@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Albumes from '../../components/Albumes/Albumes'
 import Canciones from '../../components/Canciones/Canciones'
-import DetalleCancion from '../../components/DetalleCancion/DetalleCancion'
+// import DetalleCancion from '../../components/DetalleCancion/DetalleCancion'
 
 
 class Home extends Component {
@@ -10,7 +10,7 @@ class Home extends Component {
       <>
         <Albumes />
         <Canciones />
-        <DetalleCancion />
+        {/* <DetalleCancion /> */}
       </>
     )
   }

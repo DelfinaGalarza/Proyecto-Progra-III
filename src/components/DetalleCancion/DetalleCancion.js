@@ -46,7 +46,7 @@ class DetalleCancion extends Component{
             <article className='Cancion'>
                 <div >
                     <div >
-                    {/* <img src={this.props.datosCancion.album.cover} alt="" /> */}
+                    <img src={this.props.datosCancion.album.cover} alt="" />
                     </div>
 
                 <h2 >{this.props.datosCancion.title}</h2> {/* Nombre */}
@@ -57,13 +57,13 @@ class DetalleCancion extends Component{
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 
                 </section> */}
 
-                {
+                {/* {
                     this.state.favorito ?
                     <button onClick={()=>this.removeFavorites(this.props.datosAlbum.id)}> Sacar de Favoritos </button>
                     :
                     <button onClick={()=>this.addFavorites(this.props.datosAlbum.id)}> Agregar a Favoritos </button>
             
-                }
+                } */}
                 </div>
                 
             </article>

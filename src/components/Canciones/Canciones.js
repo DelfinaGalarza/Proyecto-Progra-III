@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './styles.css'
-//import DetalleCancion from '../DetalleCancion/DetalleCancion';
-//import Filtro from "../Filtro/Filtro";
+import DetalleCancion from '../DetalleCancion/DetalleCancion';
+// import Filtro from "../Filtro/Filtro";
 
 class Canciones extends Component{
     constructor(){
         super()
         this.state={
             canciones:[], //aparecer personaje
-            backup:'',
+            backup:[],
             ready:false,
         }
     }
@@ -17,7 +17,7 @@ class Canciones extends Component{
         //Buscamos datos
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
 
-            .then( res => res.json())
+            .then( resp => resp.json())
             .then( data =>this.setState({
                 canciones: data.data,
                 backup: data.data,
@@ -54,16 +54,16 @@ class Canciones extends Component{
     // }
 
 
-     /*render(){
+     render(){
         return(
             <>
-            {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
+             {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} />  */}
             
-                {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
-                 {/*<section className="card-container">
+                {/* { <button onClick={()=>this.traerMas()}> Traer más </button> } */}
+                 <section className="card-container">
                     
                     { 
-                    this.state.ready ?
+                    this.state.canciones.length >0 ?
                         this.state.canciones.map( (unCancion, idx) => <DetalleCancion key={unCancion +idx} datosCancion ={unCancion} />)
                     : 'Cargando'
                     }
@@ -73,7 +73,7 @@ class Canciones extends Component{
         )
     }
 
-}*/}
+}
 
 
 

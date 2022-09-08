@@ -66,7 +66,7 @@ class Albumes extends Component{
                 <section className="card-container">
                     
                     { 
-                    this.state.ready ?
+                    this.state.albumes.length > 0?
                         this.state.albumes.map( (unAlbum, idx) => <DetalleAlbum key={unAlbum +idx} datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
