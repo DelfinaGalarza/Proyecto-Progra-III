@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import DetalleAlbum from '../DetalleAlbum/DetalleAlbum';
+import './styles.css'
+
 //import Filtro from "../Filtro/Filtro";
 
 class Albumes extends Component{

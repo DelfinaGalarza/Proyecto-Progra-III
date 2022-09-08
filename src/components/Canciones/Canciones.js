@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import DetalleCancion from '../DetalleCancion/DetalleCancion';
+import './styles.css'
+//import DetalleCancion from '../DetalleCancion/DetalleCancion';
 //import Filtro from "../Filtro/Filtro";
 
 class Canciones extends Component{
     constructor(){
         super()
         this.state={
-            albumes:[], //aparecer personaje
+            canciones:[], //aparecer personaje
             backup:'',
             ready:false,
         }
@@ -17,13 +18,11 @@ class Canciones extends Component{
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
 
             .then( res => res.json())
-            .then( data =>{
-                console.log(data);
-                this.setState({
+            .then( data =>this.setState({
                 canciones: data.data,
                 backup: data.data,
                 ready:true
-            })})
+            }))
             .catch(e => console.log(e)
             )
     }
@@ -55,13 +54,13 @@ class Canciones extends Component{
     // }
 
 
-    render(){
+     /*render(){
         return(
             <>
             {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
             
                 {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
-                <section className="card-container">
+                 {/*<section className="card-container">
                     
                     { 
                     this.state.ready ?
@@ -74,7 +73,9 @@ class Canciones extends Component{
         )
     }
 
-}
+}*/}
+
 
 
 export default Canciones
+
