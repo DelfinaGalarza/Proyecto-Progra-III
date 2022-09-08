@@ -13,7 +13,7 @@ function NavBar(props) {
         <section class="cajainicio">
         <div className='titlog'>
     <title>SOUND-NOW</title>
-    <img src="./img/arriba.png" alt="" />
+    <img src="./img/ritmo-parcial.jpg" alt="logo" />
     </div>
             <article className="header-items">
                 <article className="BarraDeBusqueda">

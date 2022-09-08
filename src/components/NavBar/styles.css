@@ -1,7 +1,7 @@
 .logo{
     border-radius: 48%;
     width: auto;
-    height: 170px;
+    height: 60px;
     margin-top: 20px;
     margin-left: 20PX;
 }
@@ -75,17 +75,17 @@ input{
     margin: 10px;
 }
 
-header{
-    background-color: black;
+Header{
+    background-color: rgb(53, 64, 80);
     
 }
 .introhome{
     width: 100%;
 }
 .cajainicio{
-    background-color: black;
+    background-color: rgb(0,0, 25) ;;
     margin-bottom: 20px;
 }
 body{
-    background-color: black;
+    background-color:black;
 }
