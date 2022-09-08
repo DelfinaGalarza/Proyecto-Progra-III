@@ -5,6 +5,11 @@
     margin-top: 20px;
     margin-left: 20PX;
 }
+
+.titlog {
+    width: auto;
+    margin: 30px;
+}
 .button{
     background-color: black;
     color: chartreuse;

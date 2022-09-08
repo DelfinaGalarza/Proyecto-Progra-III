@@ -7,11 +7,13 @@ import Canciones from '../../components/Canciones/Canciones'
 class Home extends Component {
   render() {
     return (
+      
       <>
         <Albumes />
         <Canciones />
         {/* <DetalleCancion /> */}
       </>
+  
     )
   }
 }

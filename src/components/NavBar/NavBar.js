@@ -6,17 +6,17 @@ import './styles.css'
 function NavBar(props) {
   return (
   
-   
 
 
     <header class="responsiveheader">
-       <div >
+      
+        <section class="cajainicio">
+        <div className='titlog'>
     <title>SOUND-NOW</title>
     <img src="./img/arriba.png" alt="" />
     </div>
-        <section class="cajainicio">
-            <article class="header-items">
-                <article class="BarraDeBusqueda">
+            <article className="header-items">
+                <article className="BarraDeBusqueda">
                    <div className='menu'>
                         <div > <Link to="/" exact="true"> HOME </Link></div>
                         <div >  <Link to="/favoritos" exact="true"> FAVORITOS</Link></div>
