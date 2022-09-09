@@ -9,8 +9,25 @@ class Home extends Component {
     return (
       
       <>
-        <Albumes/>
-        {/* <Canciones /> */}
+      <section class="todo">
+        <article class="art">
+
+            <h2 class="titulo">Canciones</h2>
+
+            <ul class="canciones" id="w">
+            <li> <Albumes/></li>
+            </ul>
+       
+        </article>
+        <article class="art">
+            <h2 class="titulo">Álbumes</h2>
+            <ul class="album" id="w">
+            <li> <Canciones /></li></ul>
+            </article>
+            </section>
+      
+       
+    
         {/* <DetalleCancion /> */}
       </>
   
