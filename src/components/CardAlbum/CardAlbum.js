@@ -46,7 +46,7 @@ class CardAlbum extends Component{
         // console.log(this.props);
         return(
             <article className="album-card" >
-                <Link to={`/DetalleA/${this.props.datosAlbum.id}`}  > <img src={this.props.datosAlbum.cover} alt="" /> </Link>
+                <Link to={`/DetalleA/${this.props.datosAlbum.id}`}  > <img className="img" src={this.props.datosAlbum.cover} alt="" /> </Link>
                 
                 <h2>{this.props.datosAlbum.title}</h2> {/* Nombre */}
                 <p>{this.props.datosAlbum.artist.name}</p> {/* Estado */}

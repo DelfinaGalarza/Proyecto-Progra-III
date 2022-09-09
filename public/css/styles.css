@@ -65,12 +65,12 @@ main {
 } */
 
 /* Top data */
-.top-data {
+.todo {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    color: #666;
+    background-color: #fff;
 }
 .data-detail {
     width: 32%;
@@ -111,14 +111,7 @@ main {
 
 
 /*Characters*/
-.card-container{
-    margin: 30px;
-    align-items: flex-start;
-    flex-wrap:wrap ;
-    justify-content: center;
-    width: 30;
 
-}
 
 /* Listas home */
 .titulo{

@@ -1,91 +1,29 @@
-.logo{
-    border-radius: 48%;
-    width: auto;
-    height: 60px;
-    margin-top: 20px;
-    margin-left: 20PX;
-}
-
-.titlog {
-    width: auto;
-    margin: 30px;
-}
-.button{
-    background-color: black;
-    color: chartreuse;
-    border-radius: 10px;
-    border:solid 3px chartreuse;
-}
-.buscar{
-    margin: 20px;
-    margin-top: 20px;
-    color: chartreuse;
-}
-input{
-    border-radius: 10px;
-    border-bottom: solid 3px chartreuse;
-    color: chartreuse;
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
-.sound-now{
-    text-decoration: none;
-    font-size:40px;
-    margin-right: 60px;
-    color:  rgb(0, 255, 21);
-}
-.menu{
-    color: rgb(105, 112, 98);
+.cajainicio{
+    background-color: rgb(0,0, 25) ;;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-right: 40px;
-   
 }
-.barratexto{
-    color: rgb(0, 255, 21);
-    font-weight: bold;
-    text-decoration: none;
-    margin: 15px;
-}
-.container{
-    background-color: black;
-}
-.titulos{
-    color: rgb(0, 255, 21);
+.header-items{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    margin: 30px; 
-    padding: 20px;
-}
-.user{
-    color: rgb(0, 255, 234);
-    text-decoration: underline;
-    font-weight: bold;
-    margin-left: 20px;
-}
-.iniciars{
-    margin: 10px;
-}
-
-Header{
-    background-color: rgb(53, 64, 80);
-    
-}
-.introhome{
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+
 }
-.cajainicio{
-    background-color: rgb(0,0, 25) ;;
-    margin-bottom: 20px;
+.logo{
+    border-radius: 48%;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20PX;
 }
-body{
-    background-color:black;
+.home{
+    justify-items: center;
+    justify-content: space-between;
+    padding: 50px;
 }

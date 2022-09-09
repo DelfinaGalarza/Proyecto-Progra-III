@@ -60,7 +60,7 @@ class Canciones extends Component{
              {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} />  */}
             
                 {/* { <button onClick={()=>this.traerMas()}> Traer más </button> } */}
-                <section className="card-container">
+                <section className="card-container" >
                     
                     { 
                     this.state.canciones.length >0 ?

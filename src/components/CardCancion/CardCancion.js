@@ -44,10 +44,10 @@ class CardCancion extends Component{
     render(){
         // console.log(this.props);
         return(
-            <article className='Cancion'>
+            <article className='cancion-card'>
                 <div >
                     <div >
-                    <Link to={`/DetalleC?id=${this.props.datosCancion.id}`}  > <img src={this.props.datosCancion.album.cover} alt="" /> </Link>
+                    <Link to={`/DetalleC?id=${this.props.datosCancion.id}`}  > <img className="img" src={this.props.datosCancion.album.cover} alt="" /> </Link>
                     
                     </div>
 
