@@ -13,14 +13,14 @@ render() {
     <section className="todo">
         <article class="titulo-container">
 
-            <h2 className="titulo">Canciones</h2>
+            <h2 className="titulo">Álbumes</h2>
             </article>
         <article class="card-container">
             <Albumes/>
             </article>
 
         <article className="titulo-container">
-            <h2 className="titulo">Álbumes</h2>
+        <h2 className="titulo">Canciones</h2>
             </article>
 
             <article class="card-container">
