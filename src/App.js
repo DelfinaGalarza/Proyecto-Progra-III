@@ -8,8 +8,7 @@ import Favoritos from './screens/Favoritos/Favoritos';
 import DetalleA from './screens/DetalleA/DetalleA';
 import DetalleC from './screens/DetalleC/DetalleC'
 import Search from './components/Search/Search';
-
-
+import verTodas from './screens/verTodas/verTodas';
 
 
 function App() {
@@ -22,6 +21,7 @@ return (
           <Route path='/favoritos' component={Favoritos} />
           <Route path='/DetalleC/:id' component={DetalleC} />
           <Route path='/DetalleA/:id' component={DetalleA} />
+          <Route path='/verTodas' component={verTodas} />
         
       </Switch>
       <Footer/>

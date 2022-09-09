@@ -1,13 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Route, Link, Switch} from 'react-router-dom'
 import './styles.css'
 import Search from '../Search/Search'
 
 
-function NavBar(props) {
-  return (
-  
-
+function Navbar(){
+      return (
 
     <header class="responsiveheader">
       
@@ -18,6 +16,7 @@ function NavBar(props) {
                         <div className="home"> <Link to="/" exact="true"> HOME </Link></div>
                         <div className="home">  <Link to="/favoritos" exact="true"> FAVORITOS</Link></div>
                         <div className="home"> <Link to="/vertodas"> VER TODAS</Link> </div>
+                
                         <Search/>
                         <div className="home"> <img className="logo" src="./img/ritmo-parcial.jpg" alt="logo" /></div>
                         
@@ -35,4 +34,4 @@ function NavBar(props) {
   )
 }
 
-export default NavBar
+export default Navbar
