@@ -24,8 +24,9 @@ class Search extends Component{
 
         render(){
             return(
-                <form onSubmit={ (e)=> this.evitarSubmit(e) }>
-                    <input type='text' onChange={(e) => this.controlarCambios(e)} value={this.state.valor}></input>
+                <form className="search-form" onSubmit={ (e)=> this.evitarSubmit(e) }>
+                    <input className="search-form_input" type='text' onChange={(e) => this.controlarCambios(e)} value={this.state.valor}></input>
+                    <button onClick={() => this.buscar()}className="search-form_button">BUSCAR</button>
                 </form>
             )
         }}
