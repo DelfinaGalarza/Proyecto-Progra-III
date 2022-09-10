@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
-import './styles.css'
+import React, {Component} from 'react'
 
-class Search extends Component{
+class Search extends Component {
     constructor(props){
         super(props)
         this.state= {
@@ -22,17 +21,15 @@ class Search extends Component{
         )
     }
 
-        render(){
-            return(
-                <section>
-
-                <form className="search-form" onSubmit={ (e)=> this.evitarSubmit(e) }>
-                    <input className="search-form_input" type='text' onChange={(e) => this.controlarCambios(e)} value={this.state.valor}></input>
-                    <button onClick={() => this.buscar()}className="search-form_button">BUSCAR</button>
-                </form>
-                </section>
-            )
-        }}
+    render(){
+        return(
+            <form onSubmit={(e)=> this.evitarSubmit(e) } >
+                <input type='text' onChange={(e) => this.controlarCambios(e)} value={this.state.valor} />
+            </form>
+        )
+    }
+}
 
 
-export default Search 
+
+export default Search

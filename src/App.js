@@ -7,15 +7,13 @@ import Home from './screens/Home/Home';
 import Favoritos from './screens/Favoritos/Favoritos';
 import DetalleA from './screens/DetalleA/DetalleA';
 import DetalleP from './screens/DetalleP/DetalleP'
-import Search from './components/Search/Search';
 import verTodas from './screens/verTodas/verTodas';
 
 
 function App() {
 return (
   <div>
-    <NavBar/>
-  <Search/>
+  <NavBar/>
     <Switch>
           <Route path ='/' exact component={Home}/>
           <Route path='/favoritos' component={Favoritos} />
