@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CardCancion from '../../components/CardCancion/CardCancion'
+import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
 
@@ -7,7 +7,7 @@ class Favoritos extends Component{
   constructor(){
       super()
       this.state={
-          cancionesYalbumes:[], 
+        podcastsYalbumes:[], 
       }
   }
 
@@ -22,12 +22,12 @@ class Favoritos extends Component{
           //recorro array y pedirla en el endpiont por los datos de cada fav
           fav.forEach(unIdFavorito => { 
             let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${unIdFavorito}`
-            let url2= `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks/${unIdFavorito}`
+            let url2= `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/podcast/${unIdFavorito}`
             fetch(url + url2)
             .then(resp => resp.json())
               .then( data => favOk.push(data))
               .then(() => this.setState({
-                cancionesYalbumes: favOk
+                podcastsYalbumes: favOk
               }))
             .catch(e => console.log(e))
           })
@@ -51,13 +51,13 @@ class Favoritos extends Component{
   //   //pasarlo a un estado y esto a un map de cards que lo renderice. 
 
   render(){
-    console.log(this.state.cancionesYalbumes)
+    console.log(this.state.podcastsYalbumes)
   return(
           <React.Fragment>
           
                     <h2>Mis Albumes favoritos</h2>
                     <section>
-                      {this.state.cancionesYalbumes.map((unfav, idx) => <CardCancion key={unfav + idx} datosfav={unfav}/>) }
+                      {this.state.podcastsYalbumes.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
                     </section>
                     
           </React.Fragment>

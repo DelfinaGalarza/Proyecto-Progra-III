@@ -20,6 +20,9 @@ class DetalleA extends Component{
     componentDidMount(){
         let albumesOk = []
         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`
+       
+
+       
         fetch(url)
         .then( res => res.json())
             .then( data => albumesOk.push (data))

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './styles.css'
 import {Link} from 'react-router-dom';
 
-class CardCancion extends Component{
+class CardPodcast extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -44,15 +44,15 @@ class CardCancion extends Component{
     render(){
         // console.log(this.props);
         return(
-            <article className='cancion-card'>
+            <article className='podcast-card'>
                 <div >
                     <div >
-                    <Link to={`/DetalleC?id=${this.props.datosCancion.id}`}  > <img className="img" src={this.props.datosCancion.album.cover} alt="" /> </Link>
-                    
+                    <Link to={`/DetalleP/${this.props.datosPodcast.id}`}  > <img className="img" src={this.props.datosPodcast.picture} alt="" /> </Link>
+ 
                     </div>
 
-                <h2 >{this.props.datosCancion.title}</h2> {/* Nombre */}
-                <p >{this.props.datosCancion.artist.name}</p> {/* Estado */}
+                <h2 >{this.props.datosPodcast.title}</h2> {/* Nombre */}
+             {/* <p >{this.props.datosPodcast.artist.name}</p>  */}
                 {/* <p>{this.props.datosCancion.album.title}</p> Especie */}
                 {/* <p className='more'>Ver más</p>  */}
                 {/* <section className='extra'>
@@ -75,4 +75,4 @@ class CardCancion extends Component{
 
 }
 
-export default CardCancion
+export default CardPodcast

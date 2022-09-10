@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import './styles.css'
-import CardCancion from '../../components/CardCancion/CardCancion'
+import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
 
-
-class DetalleC extends Component{
-    
+class DetalleP extends Component{
         constructor(props){
             super(props)
             this.state={
-                canciones:[], //aparecer personaje
+                podcasts:[], //aparecer personaje
                 // backup:[],
                 // ready:false,
                 id: Number(props.match.params.id),
@@ -19,20 +17,22 @@ class DetalleC extends Component{
         }
 
     componentDidMount(){
-        let cancionesOk = []
-        let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.id}`
+        let podcastsOk = []
+        let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/podcast/${this.state.id}`
+
+           
         fetch(url)
         .then( res => res.json())
-            .then( data => cancionesOk.push (data))
+            .then( data => podcastsOk.push (data))
             .then (data =>   this.setState(
-                {  canciones: cancionesOk}
+                {  podcasts: podcastsOk}
                 // albumes: data.data,
                 // backup: data.data,
                 // ready:true
             ))
             .catch(e => console.log(e)
             )
-        console.log(this.state.canciones)
+        console.log(this.state.podcasts)
      }
 
     render(){
@@ -41,7 +41,7 @@ class DetalleC extends Component{
         return(
             <React.Fragment>
             
-                {this.state.canciones.map ((unCancion, idx)=> <CardCancion key={unCancion + idx} datosCancion={unCancion}/>)}
+                {this.state.podcasts.map ((unPodcast, idx)=> <CardPodcast key={unPodcast + idx} datosPodcast={unPodcast}/>)}
             </React.Fragment>
 
         )
@@ -49,4 +49,4 @@ class DetalleC extends Component{
 
 }
 
-export default DetalleC
+export default DetalleP

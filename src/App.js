@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './screens/Home/Home';
 import Favoritos from './screens/Favoritos/Favoritos';
 import DetalleA from './screens/DetalleA/DetalleA';
-import DetalleC from './screens/DetalleC/DetalleC'
+import DetalleP from './screens/DetalleP/DetalleP'
 import Search from './components/Search/Search';
 import verTodas from './screens/verTodas/verTodas';
 
@@ -19,7 +19,7 @@ return (
     <Switch>
           <Route path ='/' exact component={Home}/>
           <Route path='/favoritos' component={Favoritos} />
-          <Route path='/DetalleC/:id' component={DetalleC} />
+          <Route path='/DetalleP/:id' component={DetalleP} />
           <Route path='/DetalleA/:id' component={DetalleA} />
           <Route path='/verTodas' component={verTodas} />
         

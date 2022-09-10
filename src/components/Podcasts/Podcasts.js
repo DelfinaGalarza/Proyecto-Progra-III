@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './styles.css'
-import CardCancion from '../CardCancion/CardCancion';
+import CardPodcast from '../CardPodcast/CardPodcast';
 // import Filtro from "../Filtro/Filtro";
 
-class Canciones extends Component{
+class Podcasts extends Component{
     constructor(){
         super()
         this.state={
-            canciones:[], //aparecer personaje
+            podcasts:[], //aparecer personaje
             backup:[],
             ready:false,
         }
@@ -15,11 +15,11 @@ class Canciones extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts')
 
             .then( resp => resp.json())
             .then( data =>this.setState({
-                canciones: data.data,
+                podcasts: data.data,
                 backup: data.data,
                 ready:true
             }))
@@ -63,8 +63,8 @@ class Canciones extends Component{
                 <section className="card-container" >
                     
                     { 
-                    this.state.canciones.length >0 ?
-                        this.state.canciones.map( (unCancion, idx) => <CardCancion key={unCancion +idx} datosCancion ={unCancion} />)
+                    this.state.podcasts.length >0 ?
+                        this.state.podcasts.map( (unPodcast, idx) => <CardPodcast key={unPodcast +idx} datosPodcast ={unPodcast} />)
                     : 'Cargando'
                     }
                 </section>
@@ -77,5 +77,5 @@ class Canciones extends Component{
 
 
 
-export default Canciones
+export default Podcasts
 

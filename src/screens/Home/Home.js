@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Albumes from '../../components/Albumes/Albumes'
-import Canciones from '../../components/Canciones/Canciones'
+import Podcasts from '../../components/Podcasts/Podcasts'
 import './styles.css'
 
 
@@ -20,11 +20,11 @@ render() {
             </article>
 
         <article className="titulo-container">
-        <h2 className="titulo">Canciones</h2>
+        <h2 className="titulo">Podcasts</h2>
             </article>
 
             <article class="card-container">
-            <Canciones />
+            <Podcasts />
             </article>
         </section>
     
