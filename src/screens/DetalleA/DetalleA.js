@@ -10,26 +10,28 @@ class DetalleA extends Component{
             super(props)
             this.state={
                 albumes:[], //aparecer personaje
-                backup:[],
-                ready:false,
+                // backup:[],
+                // ready:false,
                 id: Number(props.match.params.id),
             }
             console.log(this.state.id)
         }
 
     componentDidMount(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`)
+        let albumesOk = []
+        let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`
+        fetch(url)
         .then( res => res.json())
-            .then( data =>{
-                console.log(data);
-                this.setState({
-                albumes: data.data,
-                backup: data.data,
-                ready:true
-            })})
+            .then( data => albumesOk.push (data))
+            .then (data =>   this.setState(
+                {  albumes: albumesOk}
+                // albumes: data.data,
+                // backup: data.data,
+                // ready:true
+            ))
             .catch(e => console.log(e)
             )
-        console.log(this.state)
+        console.log(this.state.albumes)
      }
 
     render(){
@@ -38,7 +40,7 @@ class DetalleA extends Component{
         return(
             <React.Fragment>
             
-                {this.state.albumes.map((unAlbum, idx)=> <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>)}
+                {this.state.albumes.map ((unAlbum, idx)=> <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>)}
             </React.Fragment>
 
         )

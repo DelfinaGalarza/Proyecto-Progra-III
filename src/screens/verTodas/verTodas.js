@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Albumes from '../../components/Albumes/Albumes'
 import Canciones from '../../components/Canciones/Canciones'
 import './styles.css'
-// import DetalleCancion from '../../components/DetalleCancion/DetalleCancion'
+
 
 
 class verTodas extends Component {
