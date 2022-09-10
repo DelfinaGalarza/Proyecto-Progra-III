@@ -1,38 +1,37 @@
 import React, { Component } from 'react'
+import CardAlbum from '../../components/CardAlbum/CardAlbum'
 import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
 
 class Favoritos extends Component{
-  constructor(){
-      super()
+  constructor(props){
+      super(props)
       this.state={
-        podcastsYalbumes:[], 
+        albumFav:[], 
       }
   }
 
   componentDidMount(){
-      let fav =[];
       let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
-          fav = JSON.parse(favStorage) //parseamos el storage para obtener el array
-          let favOk = [];
-
-          //recorro array y pedirla en el endpiont por los datos de cada fav
-          fav.forEach(unIdFavorito => { 
-            let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${unIdFavorito}`
-            let url2= `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/podcast/${unIdFavorito}`
-            fetch(url + url2)
-            .then(resp => resp.json())
-              .then( data => favOk.push(data))
-              .then(() => this.setState({
-                podcastsYalbumes: favOk
-              }))
-            .catch(e => console.log(e))
-          })
-        }
-  }
+          let parsedStorage  = JSON.parse(favStorage) //parseamos el storage para obtener el array
+        
+          Promise.all(
+            parsedStorage.map(id => { //retorna una promesa que es fetch
+              return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
+              .then(resp => resp.json())
+              .then(data => {
+                this.setState({
+                  albumFav: this.state.favoritos.concat(data)
+                })})
+                .catch(e => console.log(e)
+                          ))
+                    }))
+                  }
+                }
+    
 //hago fetch dentro de bucle 
   //         Promise.all( //posibilita recibir un array completo de promesas que se cumplen o fallan con el map retornamos una promesa que es fectch
   //           parsedArr.map(elm => {
@@ -51,13 +50,12 @@ class Favoritos extends Component{
   //   //pasarlo a un estado y esto a un map de cards que lo renderice. 
 
   render(){
-    console.log(this.state.podcastsYalbumes)
   return(
           <React.Fragment>
           
                     <h2>Mis Albumes favoritos</h2>
                     <section>
-                      {this.state.podcastsYalbumes.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
+                      {this.state.albumFav.map((unfav, idx) => <CardAlbum key={unfav + idx} datosfav={unfav}/>) }
                     </section>
                     
           </React.Fragment>

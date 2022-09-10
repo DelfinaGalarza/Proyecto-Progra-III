@@ -7,34 +7,50 @@ class CardAlbum extends Component{
     constructor(props){
         super(props)
         this.state={
-            favorito: false
+            favorito: false,
+        }
+    }
+
+
+    componentDidMount(){
+        //traigo el storage
+        let storage = localStorage.getItem('favoritos')
+        let parsedStorage= JSON.parse(storage)
+
+        let isFavorite = parsedStorage.includes(this.props.datosAlbum.id)
+
+        if(isFavorite){
+            this.setState({
+                favorito: true
+            })
         }
     }
 
     addFavorites(id){
-        let favStorage = localStorage.getItem('favoritos')
+        let favStorage = localStorage.getItem('favoritos') 
 
-        if(favStorage === null){
-            let favArr = [id]
+        if(favStorage === null){ //favStorage es null
+            let favArr = [id] 
             let arrToString = JSON.stringify(favArr)
-            localStorage.setItem('favoritos', arrToString)
-        } else{
-            let parsedArr = JSON.parse(favStorage)
-            parsedArr.push(id)
-            let arrToString = JSON.stringify(parsedArr)
-            localStorage.setItem('favoritos', arrToString)
+            localStorage.setItem('favoritos', arrToString) //le guardamos arrToString a la propiedad favoritos
+        } else{ //favStorage tiene un valor adentro
+            let parsedArr = JSON.parse(favStorage) //ya es un array
+            parsedArr.push(id) //le mando el id
+            let arrToString = JSON.stringify(parsedArr) //lo paso a string
+            localStorage.setItem('favoritos', arrToString) //lo seteo
         }
         this.setState({
             favorito: true
         })
     }
     removeFavorites(id){
-        let favStorage = localStorage.getItem('favoritos')
+        let favStorage = localStorage.getItem('favoritos') //traemos el storage
         let parsedStorage = JSON.parse(favStorage) //vuelve a ser un array
         //filtramos y verifico si el id es diferente al que me pasaron por el parametro
-        let filtroStorage = parsedStorage.filter(elm => elm !== id )
+        let filtroStorage = parsedStorage.filter(elm => elm !== id ) //elm representa los elm del array
+        //filter crea un nuevo array que cumple las condiciones
         //seteo el nuevo valor en el storage
-        let storageToString = JSON.stringify(filtroStorage)
+        let storageToString = JSON.stringify(filtroStorage) //paso de array to string
         localStorage.setItem('favoritos', storageToString)
 
         this.setState({

@@ -9,6 +9,19 @@ class CardPodcast extends Component{
             favorito: false
         }
     }
+    componentDidMount(){
+        //traigo el storage
+        let storage = localStorage.getItem('favoritos')
+        let parsedStorage= JSON.parse(storage)
+
+        let isFavorite = parsedStorage.includes(this.props.datosPodcast.id)
+
+        if(isFavorite){
+            this.setState({
+                favorito: true
+            })
+        }
+    }
 
     addFavorites(id){
         let favStorage = localStorage.getItem('favoritos')
