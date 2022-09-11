@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CardAlbum from '../../components/CardAlbum/CardAlbum'
-import CardPodcast from '../../components/CardPodcast/CardPodcast'
+//import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
 
@@ -9,11 +9,13 @@ class Favoritos extends Component{
       super(props)
       this.state={
         albumFav:[], 
+        cancionFav:[]
       }
   }
 
   componentDidMount(){
-      let favStorage = localStorage.getItem('favoritos')
+    let favoritos = [];
+    let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
           let parsedStorage  = JSON.parse(favStorage) //parseamos el storage para obtener el array
@@ -57,7 +59,10 @@ class Favoritos extends Component{
                     <section>
                       {this.state.albumFav.map((unfav, idx) => <CardAlbum key={unfav + idx} datosfav={unfav}/>) }
                     </section>
-                    
+                    {/* <h2>Mis Podcast favoritos</h2>
+                    <section>
+                      {this.state.cancionFav.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
+                    </section> */}
           </React.Fragment>
     
   )

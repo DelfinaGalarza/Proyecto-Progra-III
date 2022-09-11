@@ -6,53 +6,95 @@ class CardPodcast extends Component{
     constructor(props){
         super(props)
         this.state={
-            favorito: false
+            fav: 'AGREGAR A FAVORITOS',
         }
     }
     componentDidMount(){
         //traigo el storage
+        let favoritos= [];
         let storage = localStorage.getItem('favoritos')
-        let parsedStorage= JSON.parse(storage)
 
-        let isFavorite = parsedStorage.includes(this.props.datosPodcast.id)
-
-        if(isFavorite){
+        if(storage !== null){
+            let parsedStorage= JSON.parse(storage) 
+            favoritos = parsedStorage
+        }
+        if(favoritos.includes(this.props.datosPodcast.id)){
             this.setState({
-                favorito: true
+                fav: 'QUITAR DE FAVORITOS'
             })
         }
     }
+    agregarYQuitarFav(id){
+        let favoritos= [];
+        let storage = localStorage.getItem('favoritos')
 
-    addFavorites(id){
-        let favStorage = localStorage.getItem('favoritos')
-
-        if(favStorage === null){
-            let favArr = [id]
-            let arrToString = JSON.stringify(favArr)
-            localStorage.setItem('favoritos', arrToString)
-        } else{
-            let parsedArr = JSON.parse(favStorage)
-            parsedArr.push(id)
-            let arrToString = JSON.stringify(parsedArr)
-            localStorage.setItem('favoritos', arrToString)
+        if(storage !== null){
+            let favToArray = JSON.parse(storage);
+            favoritos = favToArray
         }
-        this.setState({
-            favorito: true
-        })
-    }
-    removeFavorites(id){
-        let favStorage = localStorage.getItem('favoritos')
-        let parsedStorage = JSON.parse(favStorage) //vuelve a ser un array
-        //filtramos y verifico si el id es diferente al que me pasaron por el parametro
-        let filtroStorage = parsedStorage.filter(elm => elm !== id )
-        //seteo el nuevo valor en el storage
-        let storageToString = JSON.stringify(filtroStorage)
-        localStorage.setItem('favoritos', storageToString)
+        
+        if(favoritos.includes(id)){
+            favoritos = favoritos.filter(unId => unId !== id);
+            //mostrar al usuario agregar
+            this.setState({
+                fav: 'AGREGAR A FAVORITOS'
+            })
+        } else{
+            favoritos.push(id);
+            //mostrar quitar
+            this.setState({
+                fav: 'QUITAR DE FAVORITOS'
+            })
+        }
+        let favoritosToString = JSON.stringify(favoritos);
+        localStorage.setItem('favoritos', favoritosToString);
 
-        this.setState({
-            favorito: false
-        })
+        console.log(localStorage);
     }
+    // componentDidMount(){
+    //     //traigo el storage
+    //     let storage = localStorage.getItem('favoritos')
+    //     let parsedStorage= JSON.parse(storage)
+
+    //     let isFavorite = parsedStorage.includes(this.props.datosPodcast.id)
+
+    //     if(isFavorite){
+    //         this.setState({
+    //             favorito: true
+    //         })
+    //     }
+    // }
+
+    // addFavorites(id){
+    //     let favStorage = localStorage.getItem('favoritos')
+
+    //     if(favStorage === null){
+    //         let favArr = [id]
+    //         let arrToString = JSON.stringify(favArr)
+    //         localStorage.setItem('favoritos', arrToString)
+    //     } else{
+    //         let parsedArr = JSON.parse(favStorage)
+    //         parsedArr.push(id)
+    //         let arrToString = JSON.stringify(parsedArr)
+    //         localStorage.setItem('favoritos', arrToString)
+    //     }
+    //     this.setState({
+    //         favorito: true
+    //     })
+    // }
+    // removeFavorites(id){
+    //     let favStorage = localStorage.getItem('favoritos')
+    //     let parsedStorage = JSON.parse(favStorage) //vuelve a ser un array
+    //     //filtramos y verifico si el id es diferente al que me pasaron por el parametro
+    //     let filtroStorage = parsedStorage.filter(elm => elm !== id )
+    //     //seteo el nuevo valor en el storage
+    //     let storageToString = JSON.stringify(filtroStorage)
+    //     localStorage.setItem('favoritos', storageToString)
+
+    //     this.setState({
+    //         favorito: false
+    //     })
+    // }
 
     render(){
         // console.log(this.props);
@@ -71,14 +113,14 @@ class CardPodcast extends Component{
                 {/* <section className='extra'>
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 
                 </section> */}
-
-                {
+                <button className='delete' onClick={()=>this.agregarYQuitarFav(this.props.datosPodcast.id)}>{this.state.fav}</button>
+                {/* {
                     this.state.favorito ?
                     <button onClick={()=>this.removeFavorites(this.props.datosAlbum.id)}> Sacar de Favoritos </button>
                     :
                     <button onClick={()=>this.addFavorites(this.props.datosAlbum.id)}> Agregar a Favoritos </button>
             
-                }
+                } */}
                 </div>
                 
             </article>
