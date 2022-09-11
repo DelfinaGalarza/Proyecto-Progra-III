@@ -24,7 +24,7 @@ class Favoritos extends Component{
               .then(resp => resp.json())
               .then(data => {
                 this.setState({
-                  albumFav: this.state.favoritos.concat(data)
+                  albumFav: this.state.albumFav.concat(data)
                 })})
                 .catch(e => console.log(e)
                           ))
