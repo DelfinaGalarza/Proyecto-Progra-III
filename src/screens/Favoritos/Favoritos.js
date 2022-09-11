@@ -8,31 +8,68 @@ class Favoritos extends Component{
   constructor(props){
       super(props)
       this.state={
-        albumFav:[], 
+        albumesFav:[], 
         cancionFav:[]
       }
   }
 
   componentDidMount(){
-    //let favoritos = [];
+    let favoritos = [];
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
-          let parsedStorage  = JSON.parse(favStorage) //parseamos el storage para obtener el array
+          favoritos  = JSON.parse(favStorage) //parseamos el storage para obtener el array
+          let aFav=[];
+
+          favoritos.map(idFav => {
+            return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
+
+            .then(response => response.json())
+            .then(data => aFav.push(data))
+            .then(()=> this.setState(
+              {albumesFav: aFav}
+            ))
+            .catch(error => console.log (error))
+          ) })
+        }
+      }
+
+  render(){
+  return(
+          <React.Fragment>
+          
+                    <h2>Mis Albumes favoritos</h2>
+                    <section>
+                      {this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) }
+                    </section>
+                    {/* <h2>Mis Podcast favoritos</h2>
+                    <section>
+                      {this.state.cancionFav.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
+                    </section> */}
+          </React.Fragment>
+    
+  )
+}
+}
         
-          Promise.all(
-            parsedStorage.map(id => { //retorna una promesa que es fetch
-              return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
-              .then(resp => resp.json())
-              .then(data => {
-                this.setState({
-                  albumFav: this.state.albumFav.concat(data)
-                })})
-                .catch(e => console.log(e)
-                          ))
-                    }))
-                  }
-                }
+    
+export default Favoritos
+
+
+
+          // Promise.all(
+          //   parsedStorage.map(id => { //retorna una promesa que es fetch
+          //     return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
+          //     .then(resp => resp.json())
+          //     .then(data => {
+          //       this.setState({
+          //         albumFav: this.state.albumFav.concat(data)
+          //       })})
+          //       .catch(e => console.log(e)
+          //                 ))
+          //           }))
+          //         }
+          //       }
     
 //hago fetch dentro de bucle 
   //         Promise.all( //posibilita recibir un array completo de promesas que se cumplen o fallan con el map retornamos una promesa que es fectch
@@ -50,24 +87,3 @@ class Favoritos extends Component{
   //   }
   // }
   //   //pasarlo a un estado y esto a un map de cards que lo renderice. 
-
-  render(){
-  return(
-          <React.Fragment>
-          
-                    <h2>Mis Albumes favoritos</h2>
-                    <section>
-                      {this.state.albumFav.map((unfav, idx) => <CardAlbum key={unfav + idx} datosfav={unfav}/>) }
-                    </section>
-                    {/* <h2>Mis Podcast favoritos</h2>
-                    <section>
-                      {this.state.cancionFav.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
-                    </section> */}
-          </React.Fragment>
-    
-  )
-}
-}
-        
-    
-export default Favoritos
