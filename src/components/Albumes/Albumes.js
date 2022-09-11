@@ -17,60 +17,62 @@ class Albumes extends Component{
         //Buscamos datos
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums')
             .then( res => res.json())
-            .then( data =>{
-                console.log(data);
-                this.setState({
-                albumes: data.data,
-                backup: data.data,
+            .then( data => {console.log(data);
+            this.setState({
+                albumes: data.results,
+                backup: data.results,
                 ready:true
             })})
             .catch(e => console.log(e)
             )
     }
-
-    filtrarTarjetas(nombreBuscado){
-     let podcastsFiltradas= this.state.backup.filter(podcast => podcast.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
-    this.setState({
-    podcasts: podcastsFiltradas
-        })
-
-    }
     
-    // traerMas(){
-    //     //Traer la siguiente página de personajes
-    //     fetch(this.state.nextUrl)
-    //         .then( res => res.json())
-    //         .then( data => this.setState({
-    //             canciones: data.results.concat(this.state.canciones),
-    //             nextUrl: data.info.next
-    //         }))
-    //         .catch()
-    // }
+    componentDidUpdate(){
+    }
 
- borrar(id){
-    let podcastsFiltradas = this.state.podcasts.filter(unPodcast => unPodcast.id !== id);
+ borrar(name){
+    let albumesFiltrados = this.state.albumes.filter(unalbum => unalbum.name !== name);
     this.setState({
-       podcasts: podcastsFiltradas
+        albumes: albumesFiltrados
     })
      }
 
 
+    buscarAlbumes(nombre){
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums/?name=${nombre}`)
+       .then(resp => resp.json())
+       .then(data => this.setState({
+            albumes: data.results
+         }))
+        .catch(err => console.log(err))
+     }
+
+     filtrarAlbumes(nombre){
+        let albumFiltrado= 
+        this.state.backup.filter
+        (album => album.title.toLowerCase().includes(nombre.toLowerCase()));
+       
+        this.setState({
+        albumes: albumFiltrado
+           })
+   
+       }
+
     render(){
         return(
             <>
-             <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} />
-            
-             {/* <button onClick={()=>this.traerMas()}> Traer más </button>  */}
-        
-                <section className="card-container">
-                    
+             <Filtro filtro ={(nombre)=> this.filtrarAlbumes(nombre)} />        
+             <section className="card-container">
+
                     { 
-                    this.state.albumes.length > 0?
-                        this.state.albumes.map( (unAlbum, idx) => <CardAlbum key={unAlbum +idx} datosAlbum ={unAlbum} />)
+                        this.state.albumes.length > 0 ?
+                        this.state.albumes.map( (unAlbum, idx) => 
+                        <CardAlbum
+                         key={unAlbum +idx} 
+                         datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
-                </section>
-            
+            </section>
             </>
         )
     }
