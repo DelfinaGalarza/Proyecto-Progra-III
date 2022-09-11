@@ -20,13 +20,7 @@ function Navbar(){
                         <Search/>
                         <div className="home"> <img className="logo" src="./img/ritmo-parcial.jpg" alt="logo" /></div>
                         
-                            {/* <form action="search-results.html" method="GET" class="buscar">
-
-                              <input type="text" name="search" placeholder="¿Qué estás buscando?" value=""></input>
-                              <button type="submit" class="button">Buscar</button>
-                              <p class= "aviso"></p>
-
-                            </form> */}
+                     
                         
                 </article>
         

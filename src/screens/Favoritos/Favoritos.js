@@ -14,7 +14,7 @@ class Favoritos extends Component{
   }
 
   componentDidMount(){
-    let favoritos = [];
+    //let favoritos = [];
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){

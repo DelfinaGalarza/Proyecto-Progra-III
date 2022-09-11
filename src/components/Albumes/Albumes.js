@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import CardAlbum from '../CardAlbum/CardAlbum';
 import './styles.css'
-
-//import Filtro from "../Filtro/Filtro";
+import Filtro from "../Filtro/Filtro";
 
 class Albumes extends Component{
     constructor(props){
@@ -29,13 +28,13 @@ class Albumes extends Component{
             )
     }
 
-    // filtrarTarjetas(nombreBuscado){
-    //     let cancionesFiltradas= this.state.backup.filter(cancion => cancion.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
-    //     this.setState({
-    //     canciones: cancionesFiltradas
-    //     })
+    filtrarTarjetas(nombreBuscado){
+     let podcastsFiltradas= this.state.backup.filter(podcast => podcast.title.toLowerCase().includes(nombreBuscado.toLowerCase()));
+    this.setState({
+    podcasts: podcastsFiltradas
+        })
 
-    //}
+    }
     
     // traerMas(){
     //     //Traer la siguiente página de personajes
@@ -48,20 +47,20 @@ class Albumes extends Component{
     //         .catch()
     // }
 
-    // borrar(id){
-    // let cancionesFiltradas = this.state.canciones.filter(unaCancion => unaCancion.id !== id);
-    // this.setState({
-    //     canciones: cancionesFiltradas
-    // })
-    // }
+ borrar(id){
+    let podcastsFiltradas = this.state.podcasts.filter(unPodcast => unPodcast.id !== id);
+    this.setState({
+       podcasts: podcastsFiltradas
+    })
+     }
 
 
     render(){
         return(
             <>
-            {/* <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} /> */}
+             <Filtro filtro ={(nombreBuscado)=> this.filtrarTarjetas(nombreBuscado)} />
             
-                {/* <button onClick={()=>this.traerMas()}> Traer más </button> */}
+             {/* <button onClick={()=>this.traerMas()}> Traer más </button>  */}
         
                 <section className="card-container">
                     
