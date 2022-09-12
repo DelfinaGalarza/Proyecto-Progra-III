@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import './styles.css'
-import Search from '../Search/Search'
 
 
 function Navbar(){
@@ -17,7 +16,6 @@ function Navbar(){
                         <div className="home">  <Link to="/favoritos" exact="true"> FAVORITOS</Link></div>
                         <div className="home"> <Link to="/vertodas"> VER TODAS</Link> </div>
                 
-                        <Search/>
                         <div className="home"> <img className="logo" src="./img/ritmo-parcial.jpg" alt="logo" /></div>
                         
                      

@@ -19,7 +19,6 @@ class DetalleP extends Component{
     componentDidMount(){
         let podcastsOk = []
         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/podcast/${this.state.id}`
-
            
         fetch(url)
         .then( res => res.json())
