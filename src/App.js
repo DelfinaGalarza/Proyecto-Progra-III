@@ -8,7 +8,7 @@ import Favoritos from './screens/Favoritos/Favoritos';
 import DetalleA from './screens/DetalleA/DetalleA';
 import DetalleP from './screens/DetalleP/DetalleP'
 import verTodas from './screens/verTodas/verTodas';
-import NotFound from './screens/NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound';
 import Search from './components/Search/Search';
 
 
