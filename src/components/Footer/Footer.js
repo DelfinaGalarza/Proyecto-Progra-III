@@ -5,7 +5,7 @@ import './styles.css'
 function Footer() {
   return (
     <footer>
-        <p></p>
+        <p> Hania Achaval, Delfina Galarza y Candelaria Tallaví </p>
     </footer>
   )
 }
