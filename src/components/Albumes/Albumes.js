@@ -17,20 +17,21 @@ class Albumes extends Component{
         //Buscamos datos
         fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums')
             .then( res => res.json())
-            .then( data => {console.log(data);
-            this.setState({
-                albumes: data.results,
-                backup: data.results,
+            .then( data => {
+                console.log('Esta es la data inicial');
+                console.log(data);
+                this.setState({
+                albumes: data.data,
+                backup: data.data,
                 ready:true
             })})
             .catch(e => console.log(e)
             )
     }
     
-    componentDidUpdate(){
-    }
+    
 
- borrar(name){
+    borrar(name){
     let albumesFiltrados = this.state.albumes.filter(unalbum => unalbum.name !== name);
     this.setState({
         albumes: albumesFiltrados
@@ -38,14 +39,17 @@ class Albumes extends Component{
      }
 
 
-    buscarAlbumes(nombre){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums/?name=${nombre}`)
-       .then(resp => resp.json())
-       .then(data => this.setState({
-            albumes: data.results
-         }))
-        .catch(err => console.log(err))
-     }
+    // buscarAlbumes(nombre){
+    //     fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums/?name=${nombre}`)
+    //    .then(resp => resp.json())
+    //    .then(data => {
+    //     console.log('esta es la data')   
+    //     console.log(data)   
+    //     this.setState({
+    //         albumes: data.results
+    //      }, ()=> console.log(this.state.albumes))})
+    //     .catch(err => console.log(err))
+    //  }
 
      filtrarAlbumes(nombre){
         let albumFiltrado= 
