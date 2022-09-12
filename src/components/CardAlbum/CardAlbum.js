@@ -103,7 +103,7 @@ class CardAlbum extends Component{
                 <Link to={`/DetalleA/${this.props.datosAlbum.id}`}  > <img className="img" src={this.props.datosAlbum.cover} alt="" /> </Link>
                 
                 <h2>{this.props.datosAlbum.title}</h2> {/* Nombre */}
-                {/* <p>{this.props.datosAlbum.artist.name}</p> Estado */}
+                <p>{this.props.datosAlbum.artist.name}</p> Estado
                 {/* <p>{this.props.datosAlbum.album.title}</p> Especie */}
                 {/* <p className='more'>Ver más</p>  */}
                 {/* <section className='extra'>
@@ -111,7 +111,7 @@ class CardAlbum extends Component{
                 </section> */}
                 
                 <button className='delete' onClick={()=>this.agregarYQuitarFav(this.props.datosAlbum.id)}>{this.state.fav}</button>
-                <p className='delete' onClick={()=>this.props.borrar(this.props.datosAlbum.id)}>Borrar</p>
+                {/* <p className='delete' onClick={()=>this.props.borrar(this.props.datosAlbum.id)}>Borrar</p> */}
                 {/* {
                     this.state.favorito ?
                     <button onClick={()=>this.removeFavorites(this.props.datosAlbum.id)}> Sacar de Favoritos </button>
