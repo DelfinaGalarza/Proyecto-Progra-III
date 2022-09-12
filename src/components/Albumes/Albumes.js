@@ -15,7 +15,7 @@ class Albumes extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?limit=8')
             .then( res => res.json())
             .then( data => {
                 console.log('Esta es la data inicial');

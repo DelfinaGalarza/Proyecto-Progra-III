@@ -15,7 +15,7 @@ class Podcasts extends Component{
 
     componentDidMount(){
         //Buscamos datos
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts?limit=8')
 
             .then( resp => resp.json())
             .then( data =>this.setState({

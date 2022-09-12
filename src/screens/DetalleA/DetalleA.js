@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './styles.css'
-import CardAlbum from '../../components/CardAlbum/CardAlbum'
 
 
 
