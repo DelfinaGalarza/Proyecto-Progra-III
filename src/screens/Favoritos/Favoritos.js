@@ -14,32 +14,23 @@ class Favoritos extends Component{
   }
 
   componentDidMount(){
+    let favoritos = [];
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
-          let parsedStorege   = JSON.parse(favStorage) //parseamos el storage para obtener el array
-          
-          
-          // this.setState({
-          //   albumesFav: parsedStorege
-          // })
-          //  let aFav=[];
-        Promise.all( //me trae toda la data completa
-          parsedStorege.map(id => {
-            return((fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
+          favoritos  = JSON.parse(favStorage) //parseamos el storage para obtener el array
+          let aFav=[];
+
+          favoritos.map(idFav => {
+            return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
 
             .then(response => response.json())
-            .then(data => data)
-            
+            .then(data => aFav.push(data))
+            .then(()=> this.setState(
+              {albumesFav: aFav}
             ))
-          })
-          ).then((data)=> this.setState({
-            albumesFav: data
-          }))
-          catch((e)=> console.log(e))
-          
-        }        
-          
+            .catch(error => console.log (error))
+          ) })
         }
       }
 
@@ -49,9 +40,7 @@ class Favoritos extends Component{
           
                     <h2>Mis Albumes favoritos</h2>
                     <section>
-                      {this.state.albumesFav.length > 0 ?
-                        this.state.albumesFav.map((elm, idx) => <h4>{idx + elm.name}</h4>)
-                      map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) }
+                      {this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) }
                     </section>
                     {/* <h2>Mis Podcast favoritos</h2>
                     <section>
@@ -97,4 +86,4 @@ export default Favoritos
   //     }))
   //   }
   // }
-  //   //pasarlo a un estado y esto a un map de cards que lo renderice. 
+  //   //pasarlo a un estado y esto a un map de cards que lo renderice.
