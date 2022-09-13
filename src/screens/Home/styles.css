@@ -25,3 +25,10 @@
     background-image: linear-gradient(to right, purple , rgb(63, 131, 194));
 
 }
+
+.titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: aliceblue;
+}
