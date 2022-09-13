@@ -37,7 +37,7 @@ class DetalleA extends Component{
         console.log(this.state.album);
         
         return(
-            
+            <section className='cajaPadre'>
             <article className='album-card'>
             {
             this.state.album ?
@@ -53,6 +53,7 @@ class DetalleA extends Component{
             }
 
             </article>
+            </section>
 
         )
     }

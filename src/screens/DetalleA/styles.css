@@ -14,3 +14,14 @@
     height: 170px;
     padding: 10px 50px 20px;
 }
+.cajaPadre{
+    margin:0 1rem 2rem;
+    padding:1rem;
+    border-radius: 10px;
+    /* box-shadow: 0 10px 10px rgba(109, 109, 109, 0.3); */
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}

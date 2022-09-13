@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css'
-import CardPodcast from '../../components/CardPodcast/CardPodcast'
+//import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
 
@@ -32,7 +32,8 @@ class DetalleP extends Component{
         console.log(this.state.podcasts);
         
         return(
-            <React.Fragment>
+           <section className='cajaPadre'>
+                <article className='podcast-card'>
               { this.state.podcasts ?
             <>
              <h1> {this.state.podcasts.title}</h1>
@@ -42,9 +43,8 @@ class DetalleP extends Component{
             </>:
             <p> Cargando</p>
             }
-             
-            </React.Fragment>
-
+             </article>
+             </section>
         )
     }
 

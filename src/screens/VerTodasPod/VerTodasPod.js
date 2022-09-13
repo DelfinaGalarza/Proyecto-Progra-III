@@ -19,7 +19,7 @@ class VerTodasPod extends Component {
         componentDidMount(){
             console.log('Estamos en VerTodasPod')
             //Buscamos datos
-            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts?index=${this.state.index}&limit={this.state.limite}`)
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts?index=${this.state.index}&limit=${this.state.limite}`)
                 .then( res => res.json())
                 .then( data => {
                     console.log('Esta es la data inicial');
