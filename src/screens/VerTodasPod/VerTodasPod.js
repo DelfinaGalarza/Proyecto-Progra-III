@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import './styles.css'
-import CardAlbum from '../../components/CardAlbum/CardAlbum'
+import CardPodcast from '../../components/CardPodcast/CardPodcast'
 import Filtro from '../../components/Filtro/Filtro'
 
 
 
-class VerTodas extends Component {
+class VerTodasPod extends Component {
         constructor(props){
             super(props)
             this.state={
-                albumes:[], //aparecer personaje
+                podcasts:[], //aparecer personaje
                 backup:[],
                 limite: 16,
                 index: 0,
@@ -17,15 +17,15 @@ class VerTodas extends Component {
         }
     
         componentDidMount(){
-            console.log('Estamos en VerTodas')
+            console.log('Estamos en VerTodasPod')
             //Buscamos datos
-            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=${this.state.index}&limit=${this.state.limite}`)
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts?index=${this.state.index}&limit={this.state.limite}`)
                 .then( res => res.json())
                 .then( data => {
                     console.log('Esta es la data inicial');
                     console.log(data);
                     this.setState({
-                    albumes: data.data,
+                    podcasts: data.data,
                     backup: data.data,
                     index: this.state.limite
                 })})
@@ -33,12 +33,12 @@ class VerTodas extends Component {
                 )
         }
         cargarMas(){
-            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=${this.state.index}&limit=${this.state.limite}`)
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/podcasts?index=${this.state.index}&limit=${this.state.limite}`)
             .then( res => res.json())
             .then( data => {
                 this.setState({
-                albumes: this.state.albumes.concat(data.data),
-                backup: this.state.albumes.concat(data.data),
+                podcasts: this.state.podcasts.concat(data.data),
+                backup: this.state.podcasts.concat(data.data),
                 index: this.state.index + this.state.limite
             })})
             .catch(e => console.log(e)
@@ -58,13 +58,13 @@ class VerTodas extends Component {
         //     .catch(err => console.log(err))
         //  }
     
-        filtrarAlbumes(nombre){
-            let albumFiltrado= 
+        filtrarPodcast(nombre){
+            let podcastFiltrado= 
             this.state.backup.filter
             (album => album.title.toLowerCase().includes(nombre.toLowerCase()));
 
             this.setState({
-            albumes: albumFiltrado
+            podcasts: podcastFiltrado
             })
     
         }
@@ -72,15 +72,15 @@ class VerTodas extends Component {
         render(){
             return(
                 <>
-                <Filtro filtro ={(nombre)=> this.filtrarAlbumes(nombre)} />        
+                <Filtro filtro ={(nombre)=> this.filtrarPodcast(nombre)} />        
                 <section className="card-container">
     
                         { 
-                            this.state.albumes.length > 0 ?
-                            this.state.albumes.map( (unAlbum, idx) => 
-                            <CardAlbum
-                            key={unAlbum +idx} 
-                            datosAlbum ={unAlbum} />)
+                            this.state.podcasts.length > 0 ?
+                            this.state.podcasts.map( (unPodcast, idx) => 
+                            <CardPodcast
+                            key={unPodcast +idx} 
+                            datosPodcast ={unPodcast} />)
                         : 'Cargando'
                         }
                 </section>
@@ -92,4 +92,4 @@ class VerTodas extends Component {
     }
 
 
-export default VerTodas;
+export default VerTodasPod;
