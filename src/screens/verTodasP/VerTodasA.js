@@ -5,7 +5,7 @@ import Filtro from '../../components/Filtro/Filtro'
 
 
 
-class VerTodasP extends Component {
+class VerTodasA extends Component {
         constructor(props){
             super(props)
             this.state={
@@ -17,7 +17,7 @@ class VerTodasP extends Component {
         }
     
         componentDidMount(){
-            console.log('Estamos en VerTodasP')
+            console.log('Estamos en VerTodasA')
             //Buscamos datos
             fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=${this.state.index}&limit=${this.state.limite}`)
                 .then( res => res.json())
@@ -92,4 +92,4 @@ class VerTodasP extends Component {
     }
 
 
-export default VerTodasP;
+export default VerTodasA;
