@@ -14,25 +14,43 @@ class Favoritos extends Component{
   }
 
   componentDidMount(){
-    let favoritos = [];
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
-          favoritos  = JSON.parse(favStorage) //parseamos el storage para obtener el array
-          let aFav=[];
-
-          favoritos.map(idFav => {
-            return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
-
-            .then(response => response.json())
-            .then(data => aFav.push(data))
-            .then(()=> this.setState(
-              {albumesFav: aFav}
-            ))
-            .catch(error => console.log (error))
-          ) })
+          let favoritos  = JSON.parse(favStorage)//parseamos el storage para obtener el array
+          Promise.all(
+            favoritos.map(idFav =>{
+              return( //el map nos retona un array de promesas completas al promise all
+                fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
+                .then(resp => resp.json)
+                .then(data => data)
+              )
+              
+              }).then(data => this.setState({
+                albumesFav: data
+              }))
+              .catch(err => console.log(err))
+              )
+          
         }
       }
+          // this.setState({
+          //   albumesFav: parsedfavoritos
+          // })
+      //     let aFav=[];
+
+      //     favoritos.map(idFav => {
+      //       return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
+
+      //       .then(response => response.json())
+      //       .then(data => aFav.push(data))
+      //       .then(()=> this.setState(
+      //         {albumesFav: aFav}
+      //       ))
+      //       .catch(error => console.log (error))
+      //     ) })
+      //   }
+      // }
 
   render(){
   return(
@@ -40,7 +58,10 @@ class Favoritos extends Component{
           
                     <h2>Mis Albumes favoritos</h2>
                     <section>
-                      {this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) }
+                      {this.state.albumesFav.length > 0 ?
+                      this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) :
+                      <h1>No tienes favoritos, ve a home y agregalos</h1>
+                      }
                     </section>
                     {/* <h2>Mis Podcast favoritos</h2>
                     <section>
