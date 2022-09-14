@@ -18,22 +18,21 @@ class Favoritos extends Component{
 
       if(favStorage !== null){
           let favoritos  = JSON.parse(favStorage)//parseamos el storage para obtener el array
+
           Promise.all(
             favoritos.map(idFav =>{
               return( //el map nos retona un array de promesas completas al promise all
                 fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
                 .then(resp => resp.json)
-                .then(data => data)
-              )
-              
-              }).then(data => this.setState({
+                .then(data => this.setState({
                 albumesFav: data
-              }))
+              })))
               .catch(err => console.log(err))
-              )
-          
-        }
+              
+            
+        }))
       }
+    }
           // this.setState({
           //   albumesFav: parsedfavoritos
           // })

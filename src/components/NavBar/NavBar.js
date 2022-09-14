@@ -7,7 +7,6 @@ function Navbar(){
       return (
 
     <header class="responsiveheader">
-      
         <section class="cajainicio">
         <h1 className='tituloprin'> RHYTHM</h1>
             <article className="header-items">

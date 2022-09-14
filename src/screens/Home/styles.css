@@ -32,3 +32,9 @@
     text-align: center;
     color: aliceblue;
 }
+
+.cajab{
+    border-radius: 10px;
+    width: 100%;
+    background-image: linear-gradient(to right, purple , rgb(63, 131, 194));
+}

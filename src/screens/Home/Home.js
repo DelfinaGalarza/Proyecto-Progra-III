@@ -21,9 +21,8 @@ render() {
     return (
     
     <>
-
+    <section className= "cajab">
     <Search/>
-
     <section className="todo">
         <article class="titulo-container">
 
@@ -41,6 +40,10 @@ render() {
             <Podcasts />
             </article>
         </section>
+    
+    </section>
+
+
     
     
     </>
