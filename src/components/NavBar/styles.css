@@ -11,6 +11,7 @@ margin:auto
     align-items: center;
     width: 100%;
 
+
 }
 .logo{
     border-radius: 48%;
@@ -25,3 +26,14 @@ margin:auto
     color: white;
 }
 
+.tituloprin {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    text-align: center;
+  background-color: black;
+  color: blue;
+}
+
+.responsiveheader {
+    background-color: black;
+}
