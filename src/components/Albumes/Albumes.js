@@ -36,7 +36,7 @@ class Albumes extends Component{
     this.setState({
         albumes: albumesFiltrados
     })
-     }
+    }
 
 
     // buscarAlbumes(nombre){
@@ -51,29 +51,29 @@ class Albumes extends Component{
     //     .catch(err => console.log(err))
     //  }
 
-     filtrarAlbumes(nombre){
+    filtrarAlbumes(nombre){
         let albumFiltrado= 
         this.state.backup.filter
         (album => album.title.toLowerCase().includes(nombre.toLowerCase()));
-       
+    
         this.setState({
         albumes: albumFiltrado
-           })
-   
-       }
+        })
+
+    }
 
     render(){
         return(
             <>
-             <Filtro filtro ={(nombre)=> this.filtrarAlbumes(nombre)} />        
-             <section className="card-container">
+            <Filtro filtro ={(nombre)=> this.filtrarAlbumes(nombre)} />        
+            <section className="card-container">
 
                     { 
                         this.state.albumes.length > 0 ?
                         this.state.albumes.map( (unAlbum, idx) => 
                         <CardAlbum
-                         key={unAlbum +idx} 
-                         datosAlbum ={unAlbum} />)
+                        key={unAlbum +idx} 
+                        datosAlbum ={unAlbum} />)
                     : 'Cargando'
                     }
             </section>

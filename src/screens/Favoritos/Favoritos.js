@@ -9,7 +9,7 @@ class Favoritos extends Component{
       super(props)
       this.state={
         albumesFav:[], 
-        cancionFav:[]
+        PodcastsFav:[]
       }
   }
 

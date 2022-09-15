@@ -8,6 +8,7 @@ class CardAlbum extends Component{
         super(props)
         this.state={
             fav: 'AGREGAR A FAVORITOS',
+            verMas: 'hide',
         }
     }
 
@@ -63,38 +64,17 @@ class CardAlbum extends Component{
     //         })
     //     }
     // }
-
-    // addFavorites(id){
-    //     let favStorage = localStorage.getItem('favoritos') 
-
-    //     if(favStorage === null){ //favStorage es null
-    //         let favArr = [id] 
-    //         let arrToString = JSON.stringify(favArr)
-    //         localStorage.setItem('favoritos', arrToString) //le guardamos arrToString a la propiedad favoritos
-    //     } else{ //favStorage tiene un valor adentro
-    //         let parsedArr = JSON.parse(favStorage) //ya es un array
-    //         parsedArr.push(id) //le mando el id
-    //         let arrToString = JSON.stringify(parsedArr) //lo paso a string
-    //         localStorage.setItem('favoritos', arrToString) //lo seteo
-    //     }
-    //     this.setState({
-    //         favorito: true
-    //     })
-    // }
-    // removeFavorites(id){
-    //     let favStorage = localStorage.getItem('favoritos') //traemos el storage
-    //     let parsedStorage = JSON.parse(favStorage) //vuelve a ser un array
-    //     //filtramos y verifico si el id es diferente al que me pasaron por el parametro
-    //     let filtroStorage = parsedStorage.filter(elm => elm !== id ) //elm representa los elm del array
-    //     //filter crea un nuevo array que cumple las condiciones
-    //     //seteo el nuevo valor en el storage
-    //     let storageToString = JSON.stringify(filtroStorage) //paso de array to string
-    //     localStorage.setItem('favoritos', storageToString)
-
-    //     this.setState({
-    //         favorito: false
-    //     })
-    // }
+    verMas(){
+        if(this.state.verMas === 'show'){
+            this.setState({
+                verMas: 'hide'
+            })
+        }else{
+            this.setState({
+                verMas: 'show'}
+            )
+        }
+    }
 
     render(){
         // console.log(this.props);
@@ -109,16 +89,13 @@ class CardAlbum extends Component{
                 {/* <section className='extra'>
                     <p>Origen: {this.props.datosPersonaje.origin.name}</p> 
                 </section> */}
+
+                <button onClick={()=> this.verMas()}> Ver mas </button>
+                <p className={this.state.verMas}> If you can never get enough true crime... Congratulations, you’ve found your people.</p>
                 
                 <button className='delete' onClick={()=>this.agregarYQuitarFav(this.props.datosAlbum.id)}>{this.state.fav}</button>
                 {/* <p className='delete' onClick={()=>this.props.borrar(this.props.datosAlbum.id)}>Borrar</p> */}
-                {/* {
-                    this.state.favorito ?
-                    <button onClick={()=>this.removeFavorites(this.props.datosAlbum.id)}> Sacar de Favoritos </button>
-                    :
-                    <button onClick={()=>this.addFavorites(this.props.datosAlbum.id)}> Agregar a Favoritos </button>
-            
-                } */}
+        
             </article>
 
         )
