@@ -48,6 +48,7 @@ class DetalleA extends Component{
                 <p>{this.state.album.genres.data[0].name}</p> 
                 <p>{this.state.album.artist.name}</p>   
                 
+                
             </>:
             <p> Cargando</p>
             }

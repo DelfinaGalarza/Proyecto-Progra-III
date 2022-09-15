@@ -40,6 +40,7 @@ class DetalleP extends Component{
             <img className="img" src={this.state.podcasts.picture} alt="" /> 
                 
                 <p>{this.state.podcasts.description}</p>  
+                <p>{this.state.podcasts.fans}</p>  
             </>:
             <p> Cargando</p>
             }
