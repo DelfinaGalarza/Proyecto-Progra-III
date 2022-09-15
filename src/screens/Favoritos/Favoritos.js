@@ -14,23 +14,26 @@ class Favoritos extends Component{
   }
 
   componentDidMount(){
+  
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
           let favoritos  = JSON.parse(favStorage)//parseamos el storage para obtener el array
 
-          Promise.all(
-            favoritos.map(idFav =>{
+          Promise.all(//[{}, {}]
+            favoritos.map(id =>{
               return( //el map nos retona un array de promesas completas al promise all
-                fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
-                .then(resp => resp.json)
-                .then(data => this.setState({
-                albumesFav: data
-              })))
-              .catch(err => console.log(err))
-              
-            
-        }))
+                fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
+                .then(resp => resp.json())
+              )           
+            })
+          )
+          .then(data => this.setState({
+            albumesFav: data
+          }, ()=>{ 
+            console.log('Esta es la info del estado de favs')
+            console.log(this.state.albumesFav)}))
+          .catch(err => console.log(err))
       }
     }
           // this.setState({
@@ -52,6 +55,8 @@ class Favoritos extends Component{
       // }
 
   render(){
+    console.log('hola')
+
   return(
           <React.Fragment>
           
@@ -59,13 +64,8 @@ class Favoritos extends Component{
                     <section>
                       {this.state.albumesFav.length > 0 ?
                       this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) :
-                      <h1>No tienes favoritos, ve a home y agregalos</h1>
-                      }
+                      <h1>No tienes favoritos, ve a home y agregalos</h1>}
                     </section>
-                    {/* <h2>Mis Podcast favoritos</h2>
-                    <section>
-                      {this.state.cancionFav.map((unfav, idx) => <CardPodcast key={unfav + idx} datosfav={unfav}/>) }
-                    </section> */}
           </React.Fragment>
     
   )
