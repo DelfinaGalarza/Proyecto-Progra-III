@@ -44,10 +44,12 @@ class DetalleA extends Component{
             <>
             <h1> {this.state.album.title}</h1>
             <img className="img" src={this.state.album.cover_medium} alt="" /> 
-                
-                <p>{this.state.album.genres.data[0].name}</p> 
-                <p>{this.state.album.artist.name}</p>   
-                
+
+                <h2>Artista: {this.state.album.artist.name}</h2>   
+                <h3>Genero: {this.state.album.genres.data[0].name}</h3> 
+            
+                <p> {this.state.album.artist.share}</p>  
+
                 
             </>:
             <p> Cargando</p>
