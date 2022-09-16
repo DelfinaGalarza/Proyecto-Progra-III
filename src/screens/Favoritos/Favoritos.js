@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import CardAlbum from '../../components/CardAlbum/CardAlbum'
 import './styles.css'
-//import CardPodcast from '../../components/CardPodcast/CardPodcast'
-
 
 
 class Favoritos extends Component{
@@ -19,9 +17,9 @@ class Favoritos extends Component{
     let favStorage = localStorage.getItem('favoritos')
 
       if(favStorage !== null){
-          let favoritos  = JSON.parse(favStorage)//parseamos el storage para obtener el array
+          let favoritos  = JSON.parse(favStorage) //parseamos el storage para obtener el array
 
-          Promise.all(//[{}, {}]
+          Promise.all(
             favoritos.map(id =>{
               return( //el map nos retona un array de promesas completas al promise all
                 fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
@@ -37,23 +35,6 @@ class Favoritos extends Component{
           .catch(err => console.log(err))
       }
     }
-          // this.setState({
-          //   albumesFav: parsedfavoritos
-          // })
-      //     let aFav=[];
-
-      //     favoritos.map(idFav => {
-      //       return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${idFav}`)
-
-      //       .then(response => response.json())
-      //       .then(data => aFav.push(data))
-      //       .then(()=> this.setState(
-      //         {albumesFav: aFav}
-      //       ))
-      //       .catch(error => console.log (error))
-      //     ) })
-      //   }
-      // }
 
   render(){
     console.log('hola')
@@ -75,36 +56,3 @@ class Favoritos extends Component{
         
     
 export default Favoritos
-
-
-
-          // Promise.all(
-          //   parsedStorage.map(id => { //retorna una promesa que es fetch
-          //     return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
-          //     .then(resp => resp.json())
-          //     .then(data => {
-          //       this.setState({
-          //         albumFav: this.state.albumFav.concat(data)
-          //       })})
-          //       .catch(e => console.log(e)
-          //                 ))
-          //           }))
-          //         }
-          //       }
-    
-//hago fetch dentro de bucle 
-  //         Promise.all( //posibilita recibir un array completo de promesas que se cumplen o fallan con el map retornamos una promesa que es fectch
-  //           parsedArr.map(elm => {
-  //             return(fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${elm}`) //elm es cada id del array
-  //             .then(resp => resp.json())
-  //             .then( data =>{
-  //               console.log(data);
-  //               this.setState({
-  //               favoritos: this.state.favoritos.concat(data)
-  //           })})
-  //           .catch(e => console.log(e)
-  //           ))
-  //     }))
-  //   }
-  // }
-  //   //pasarlo a un estado y esto a un map de cards que lo renderice.
