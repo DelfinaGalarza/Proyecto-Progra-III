@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CardAlbum from '../../components/CardAlbum/CardAlbum'
+import './styles.css'
 //import CardPodcast from '../../components/CardPodcast/CardPodcast'
 
 
@@ -61,7 +62,7 @@ class Favoritos extends Component{
           <React.Fragment>
           
                     <h2>Mis Albumes favoritos</h2>
-                    <section>
+                    <section className="card-container">
                       {this.state.albumesFav.length > 0 ?
                       this.state.albumesFav.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosAlbum={unAlbum}/>) :
                       <h1>No tienes favoritos, ve a home y agregalos</h1>}
