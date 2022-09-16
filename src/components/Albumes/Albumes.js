@@ -39,18 +39,6 @@ class Albumes extends Component{
     }
 
 
-    // buscarAlbumes(nombre){
-    //     fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums/?name=${nombre}`)
-    //    .then(resp => resp.json())
-    //    .then(data => {
-    //     console.log('esta es la data')   
-    //     console.log(data)   
-    //     this.setState({
-    //         albumes: data.results
-    //      }, ()=> console.log(this.state.albumes))})
-    //     .catch(err => console.log(err))
-    //  }
-
     filtrarAlbumes(nombre){
         let albumFiltrado= 
         this.state.backup.filter

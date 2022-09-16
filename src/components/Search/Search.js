@@ -50,7 +50,10 @@ render(){
             <button onClick={(d)=> this.buscar(d)} > </button>
 
         </form>
-        {this.state.resultados.length > 0 ?this.state.resultados.map(resultado => (<p>{resultado.title}</p>)) : <p>Cargando</p>}
+
+        {this.state.resultados.length > 0 ?this.state.resultados.map(resultado => (<p>{resultado.title}</p>)) :   <iframe src="https://giphy.com/embed/L05HgB2h6qICDs5Sms" />
+ 
+    }
         </>
 
     )
