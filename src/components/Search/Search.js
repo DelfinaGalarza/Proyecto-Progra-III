@@ -23,8 +23,6 @@ class Search extends Component {
             })})
             .catch(e => console.log(e)
             )
-    
-
     }
 
 
@@ -32,6 +30,7 @@ class Search extends Component {
         event.preventDefault()
         console.log(event)
     }
+// Con esto evitas que la pagina se refreshee cada vez que hay un input
 
     controlarCambios(event){
         console.log(event);
@@ -40,6 +39,7 @@ class Search extends Component {
         }
         )
     }
+    //Con esto
     
 render(){
     return(

@@ -75,7 +75,7 @@ class Favoritos extends Component{
     
 export default Favoritos
 
-//nose
+
 
           // Promise.all(
           //   parsedStorage.map(id => { //retorna una promesa que es fetch
