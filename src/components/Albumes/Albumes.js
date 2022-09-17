@@ -29,6 +29,7 @@ class Albumes extends Component{
             )
     }
     
+    // seteamos el estado inicial
     
 
     borrar(name){
@@ -37,6 +38,8 @@ class Albumes extends Component{
         albumes: albumesFiltrados
     })
     }
+
+    //para q
 
 
     filtrarAlbumes(nombre){

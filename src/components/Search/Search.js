@@ -8,8 +8,8 @@ class Search extends Component {
             resultados:[],
         }
     }
+//Seteamos el estado inicial
 
-    
 
     buscar(event){
 
@@ -30,7 +30,8 @@ class Search extends Component {
         event.preventDefault()
         console.log(event)
     }
-// Con esto evitas que la pagina se refreshee cada vez que hay un input
+// Con esto evitas que la pagina se refreshee cada vez que hay un submit perdiendo el estado
+// "Milanesa"
 
     controlarCambios(event){
         console.log(event);
@@ -39,19 +40,23 @@ class Search extends Component {
         }
         )
     }
-    //Con esto
+    //Con esto cada vez que tipeo se actualiza el estado, se controlan los cambios
+ 
     
 render(){
     return(
     <>
         <form onSubmit= {(e)=> this.evitarSubmit(e)}>
-            <input type='text' onChange={(e) => this.controlarCambios(e)}
+    {/* //recibe al evento que ocurre, asi el evitar submit hace que el sitio no se recarge */}
+       
+        <input type='text' onChange={(e) => this.controlarCambios(e)}
+            
             value={this.state.valor}/>
-            <button onClick={(d)=> this.buscar(d)} > </button>
+            <button onClick={(d)=> this.buscar(d)} ></button>
 
         </form>
 
-        {this.state.resultados.length > 0 ?this.state.resultados.map(resultado => (<p>{resultado.title}</p>)) :   <iframe src="https://giphy.com/embed/L05HgB2h6qICDs5Sms" />
+        {this.state.resultados.length > 0 ?this.state.resultados.map(resultado => (<p>{resultado.title}</p>)) :   <h3>Cargando</h3>
  
     }
         </>
