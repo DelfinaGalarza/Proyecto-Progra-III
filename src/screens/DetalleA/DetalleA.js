@@ -46,12 +46,13 @@ class DetalleA extends Component{
             <img className="img" src={this.state.album.cover_medium} alt="" /> 
 
                 <h2>Artista: {this.state.album.artist.name}</h2>   
-                <h3>Genero: {this.state.album.genres.data[0].name}</h3> 
-                <h3>Duracion: {this.state.duration}</h3> 
+                <h3>Genero: {this.state.album.genres.data[0].name}</h3>  
                 <h3>Fans: {this.state.album.fans}</h3> 
-                <h3>Genero: {this.state.album.release_date}</h3> 
-            
-                {/* <p> {this.state.album.artist.share}</p>   */}
+                <h3> Fecha de lanzamiento: {this.state.album.release_date}</h3> 
+                <ul>Lista de canciones:
+                <li>  {this.state.album.tracks.data[2].title}</li>
+                </ul>
+                
 
                 
             </>:
