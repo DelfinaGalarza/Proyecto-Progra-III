@@ -46,10 +46,10 @@ class DetalleA extends Component{
                 <h3>Genero: {this.state.album.genres.data[0].name}</h3>  
                 <h3>Fans: {this.state.album.fans}</h3> 
                 <h3> Fecha de lanzamiento: {this.state.album.release_date}</h3> 
-                <ul>Lista de canciones:
-                    this.state.album
-                        <li>{this.state.album.tracks.data[0].title}</li>
-                </ul>
+                <h3>  1 Cancion:     
+
+                        {this.state.album.tracks.data[0].title}
+                </h3>
                 
 
                 
