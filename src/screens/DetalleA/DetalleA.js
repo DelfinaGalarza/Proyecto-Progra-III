@@ -8,11 +8,9 @@ class DetalleA extends Component{
         constructor(props){
             super(props)
             this.state={
-
-                album:false, //aparecer personaje
-                // backup:[],
-                // ready:false,
+                album:false, 
                 id: Number(props.match.params.id),
+                tracks:[]
             }
             console.log(this.state.id)
         }
@@ -21,7 +19,7 @@ class DetalleA extends Component{
         
         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`
     
-       
+    
         fetch(url)
         .then( res => res.json())
             .then( data => this.setState(
@@ -30,8 +28,7 @@ class DetalleA extends Component{
             
             .catch(e => console.log(e)
             )
-       
-     }
+    }
 
     render(){
         console.log(this.state.album);
@@ -50,7 +47,8 @@ class DetalleA extends Component{
                 <h3>Fans: {this.state.album.fans}</h3> 
                 <h3> Fecha de lanzamiento: {this.state.album.release_date}</h3> 
                 <ul>Lista de canciones:
-                <li>  {this.state.album.tracks.data[2].title}</li>
+                    this.state.album
+                        <li>{this.state.album.tracks.data[0].title}</li>
                 </ul>
                 
 
