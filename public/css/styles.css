@@ -127,3 +127,67 @@ main {
     
 }
 
+@keyframes cambio {
+    0% {margin-left:0; }
+    20% {margin-left:0; }
+
+    25% {margin-left:-100%; }
+    45% {margin-left:-100%; }
+
+    50% {margin-left:-200%; }
+    75% {margin-left:-200%; }
+
+    80% {margin-left:-300%; }
+    100% {margin-left:-300%; }
+}
+
+/* diseño tablet */
+@media(max-width: 768px){
+    
+    .titulo-container{
+        width: 100%;
+        text-align: center;
+        margin-top: 0%;
+    }
+    .cajab{
+        justify-content: space-around;
+    }
+    .responsiveheader{
+        justify-content: space-around;
+    }
+    .logo{
+        width: auto;
+        height: 170px;
+        margin-top: 20px;
+        margin-left: 20PX;
+    }
+    .img{
+        width: 100%;
+    }
+    .user{
+        margin-left: 0%;
+    }
+    .perfil-menu{
+        justify-content: right;
+        margin-right: 0%;
+    }
+    .introhome{
+        width: 100%;
+    }
+    .footerpic{
+        width: 100%;
+    }
+    .albumpic{
+        width: 100%;
+    }
+    .album{
+        width:45%;
+        margin:2.5%;
+    }
+    .formulario{
+        width: 65vh;
+    }
+    .cajaPadre{
+        width: 75vh;
+    }
+}
