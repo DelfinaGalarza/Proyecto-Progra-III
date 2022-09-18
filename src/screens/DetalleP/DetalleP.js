@@ -9,8 +9,6 @@ class DetalleP extends Component{
             super(props)
             this.state={
                 podcasts: false, //aparecer personaje
-                // backup:[],
-                // ready:false,
                 id: Number(props.match.params.id),
             }
             console.log(this.state.id)

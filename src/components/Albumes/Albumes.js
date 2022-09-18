@@ -8,8 +8,8 @@ class Albumes extends Component{
         super(props)
         this.state={
             albumes:[], //aparecer personaje
-            backup:[],
-            ready:false,
+            // backup:[],
+            // ready:false,
         }
     }
 

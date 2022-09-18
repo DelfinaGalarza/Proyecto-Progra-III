@@ -10,7 +10,6 @@ class DetalleA extends Component{
             this.state={
                 album:false, 
                 id: Number(props.match.params.id),
-                tracks:[]
             }
             console.log(this.state.id)
         }
@@ -46,7 +45,7 @@ class DetalleA extends Component{
                 <h3>Genero: {this.state.album.genres.data[0].name}</h3>  
                 <h3>Fans: {this.state.album.fans}</h3> 
                 <h3> Fecha de lanzamiento: {this.state.album.release_date}</h3> 
-                <h3>  1 Cancion:     
+                <h3>  Primer Cancion:     
 
                         {this.state.album.tracks.data[0].title}
                 </h3>
