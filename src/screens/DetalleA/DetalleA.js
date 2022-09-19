@@ -49,7 +49,7 @@ class DetalleA extends Component{
 
                         {this.state.album.tracks.data[0].title}
                 </h3>
-                
+               
 
                 
             </>:
